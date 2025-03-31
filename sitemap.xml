@@ -1,7 +1,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://orange.run.place/</loc>
-    <lastmod>2025-03-06</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -13,7 +13,7 @@
   </url>
   <url>
     <loc>https://orange.run.place/updates.html</loc>
-    <lastmod>2025-03-06</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.3</priority>
   </url>
