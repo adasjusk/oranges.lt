@@ -21,15 +21,19 @@
     <meta name="twitter:description" content="Orange MC is a minecraft survival server with a world that never resets, with pvp enabled in a free for all environment.">
     <meta name="twitter:url" content="https://orange.run.place/">
     <link rel="stylesheet" href="styles.css">
-    <script>
-  if (window.location.pathname.endsWith('.html')) {
-    window.location.replace(
-      window.location.pathname
-        .replace(/\.html$/, '/') +
-      window.location.search +
-      window.location.hash
-    );
-  }
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Rewrite all <a href="*.html"> to drop the .html before navigation
+    document.querySelectorAll('a[href$=".html"]').forEach(link => {
+      link.addEventListener('click', function(event) {
+        event.preventDefault();
+        const href = link.getAttribute('href').replace(/\.html$/, '');
+        history.pushState(null, '', href);
+        // Then reload the page to fetch the correct HTML
+        window.location.href = href;
+      });
+    });
+  });
 </script>
 </head>
 <body>
