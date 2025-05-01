@@ -1,86 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="google-site-verification" content="4FMwk7U4BWlKoVRMhTtR5_aEK7fgIklLO83Hf3wFu3I" />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="HandheldFriendly" content="True">
-    <title>Orange MC</title>
-    <link rel="icon" type="image/png" href="logo.png">
-    <meta name="description" content="Orange MC is a minecraft survival server with a world that never resets, with pvp enabled in a free for all environment.">
-    <link rel="canonical" href="https://orange.run.place/">
-    <meta name="referrer" content="no-referrer-when-downgrade"> 
-    <meta property="og:site_name" content="Orange MC">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Orange MC">
-    <meta property="og:description" content="Orange MC is a minecraft survival server with a world that never resets, with pvp enabled in a free for all environment.">
-    <meta property="og:url" content="https://orange.run.place/">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Orange MC">
-    <meta name="twitter:description" content="Orange MC is a minecraft survival server with a world that never resets, with pvp enabled in a free for all environment.">
-    <meta name="twitter:url" content="https://orange.run.place/">
-    <link rel="stylesheet" href="styles.css">
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Rewrite all <a href="*.html"> to drop the .html before navigation
-    document.querySelectorAll('a[href$=".html"]').forEach(link => {
-      link.addEventListener('click', function(event) {
-        event.preventDefault();
-        const href = link.getAttribute('href').replace(/\.html$/, '');
-        history.pushState(null, '', href);
-        // Then reload the page to fetch the correct HTML
-        window.location.href = href;
+  <meta name="google-site-verification" content="4FMwk7U4BWlKoVRMhTtR5_aEK7fgIklLO83Hf3wFu3I" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="HandheldFriendly" content="True">
+  <title>Orange MC</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <meta name="description" content="Orange MC is a minecraft survival server with a world that never resets, with pvp enabled in a free for all environment.">
+  <link rel="canonical" href="https://oranges.lt/">
+  <meta name="referrer" content="no-referrer-when-downgrade"> 
+  <meta property="og:site_name" content="Orange MC">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Orange MC">
+  <meta property="og:description" content="Orange MC is a minecraft survival server with a world that never resets, with pvp enabled in a free for all environment.">
+  <meta property="og:url" content="https://oranges.lt/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Orange MC">
+  <meta name="twitter:description" content="Orange MC is a minecraft survival server with a world that never resets, with pvp enabled in a free for all environment.">
+  <meta name="twitter:url" content="https://oranges.lt/">
+  <link rel="stylesheet" href="styles.css">
+
+  <script>
+    (function() {
+      // 1) On page load, clean up .html or /index.html in the URL without reloading:
+      const p = window.location.pathname;
+      if (/\/?index\.html$/.test(p)) {
+        // /index.html → /
+        history.replaceState(null, '', '/');
+      } else if (p.endsWith('.html')) {
+        // /about.html → /about
+        const clean = p.slice(0, -5);
+        history.replaceState(null, '', clean);
+      }
+
+      // 2) Rewrite any <a href="*.html"> clicks to extensionless paths:
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('a[href$=".html"]').forEach(link => {
+          link.addEventListener('click', event => {
+            event.preventDefault();
+            // Convert “page.html” → “/page”
+            const target = link.getAttribute('href').replace(/\.html$/, '');
+            history.pushState(null, '', target);
+            // Then actually navigate so GitHub Pages serves the correct file
+            window.location.href = target;
+          });
+        });
       });
-    });
-  });
-</script>
+    })();
+  </script>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="logo.png" alt="Icon" class="icon">
-            <span class="site-name">Orange MC</span>
-        </div>
-        <nav>
-            <a href="info.html"><button>Info</button></a>
-            <a href="https://discord.gg/cpkfnRuRv7" target="_blank"><button>Discord</button></a>
-            <a href="updates.html"><button>Updates</button></a>
-            <a href="commands.html"><button>Commands</button></a>
-        </nav>
-    </header>
-    <main> 
-        <div id="about-box">
-            <h2>About:</h2>
-            <p>Welcome to Orange MC, the best anarchy Minecraft server where chaos meets creativity. In this lawless world, there are no rules, no resets, and no limits to what you can achieve. Build, destroy, raid, and explore a vast, ungoverned landscape where your imagination and survival skills are the only boundaries.</p>
-            <h2>Latest Updates:</h2>
-            <h3>Server Update #2</h3>
-            <p>/kill added</p>
-            <p>Server optimized</p>
-            <p>/stuck added</p>
-            <p>annoying pop up deleted "chat isn't secure."</p>
-            <p>Better commands</p>
-            <p>permisions fixed and roles</p>
-            <p>Command permissions fixed</p>
-            <p>new home plugin</p>
-            <p>new highways in nether</p>
-            <p>new currency: eur</p>
-            <p>1 MIL border increasing soon!</p>
-            <p>/tp delete</p>
-            <p>custom death</p>
-            <p>random spawn location</p>
-            <p>Updated 2025-04-01</p>
-        </div>
-        <div id="server-info-box">
-            <h2>Server Information</h2>
-            <p>Server is 1.21.5 version and it's running papermc with good performance, java only.</p>
-            <p>IP Address: <span id="server-ip">mc.orange.run.place</span></p>
-            <button id="copy-ip">Copy IP</button>
-        </div>
-        <div class="bottom-right-text">
-            Orange MC © 2025
-          </div>
-    </main>
-    <script src="script.js"></script>
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Icon" class="icon">
+      <span class="site-name">Orange MC</span>
+    </div>
+    <nav>
+      <!-- Keep your hrefs pointing to .html; the script will clean them -->
+      <a href="info.html"><button>Info</button></a>
+      <a href="https://discord.gg/cpkfnRuRv7" target="_blank"><button>Discord</button></a>
+      <a href="updates.html"><button>Updates</button></a>
+      <a href="commands.html"><button>Commands</button></a>
+    </nav>
+  </header>
+
+  <main> 
+    <div id="about-box">
+      <h2>About:</h2>
+      <p>Welcome to Orange MC, the best anarchy Minecraft server where chaos meets creativity. In this lawless world, there are no rules, no resets, and no limits to what you can achieve. Build, destroy, raid, and explore a vast, ungoverned landscape where your imagination and survival skills are the only boundaries.</p>
+      <h2>Latest Updates:</h2>
+      <h3>Server Update #2</h3>
+      <p>/kill added</p>
+      <p>Server optimized</p>
+      <p>/stuck added</p>
+      <p>annoying pop up deleted "chat isn't secure."</p>
+      <p>Better commands</p>
+      <p>permisions fixed and roles</p>
+      <p>Command permissions fixed</p>
+      <p>new home plugin</p>
+      <p>new highways in nether</p>
+      <p>new currency: eur</p>
+      <p>1 MIL border increasing soon!</p>
+      <p>/tp delete</p>
+      <p>custom death</p>
+      <p>random spawn location</p>
+      <p>Updated 2025-04-01</p>
+    </div>
+    <div id="server-info-box">
+      <h2>Server Information</h2>
+      <p>Server is 1.21.5 version and it's running papermc with good performance, java only.</p>
+      <p>IP Address: <span id="server-ip">mc.orange.run.place</span></p>
+      <button id="copy-ip">Copy IP</button>
+    </div>
+    <div class="bottom-right-text">
+      Orange MC © 2025
+    </div>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
