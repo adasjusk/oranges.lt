@@ -20,36 +20,8 @@
   <meta name="twitter:title" content="Orange MC">
   <meta name="twitter:description" content="Orange MC is a minecraft survival server with a world that never resets, with pvp enabled in a free for all environment.">
   <meta name="twitter:url" content="https://oranges.lt/">
+  <script src="script.js"></script>
   <link rel="stylesheet" href="styles.css">
-
-  <script>
-    (function() {
-      // 1) On page load, clean up .html or /index.html in the URL without reloading:
-      const p = window.location.pathname;
-      if (/\/?index\.html$/.test(p)) {
-        // /index.html → /
-        history.replaceState(null, '', '/');
-      } else if (p.endsWith('.html')) {
-        // /about.html → /about
-        const clean = p.slice(0, -5);
-        history.replaceState(null, '', clean);
-      }
-
-      // 2) Rewrite any <a href="*.html"> clicks to extensionless paths:
-      document.addEventListener('DOMContentLoaded', () => {
-        document.querySelectorAll('a[href$=".html"]').forEach(link => {
-          link.addEventListener('click', event => {
-            event.preventDefault();
-            // Convert “page.html” → “/page”
-            const target = link.getAttribute('href').replace(/\.html$/, '');
-            history.pushState(null, '', target);
-            // Then actually navigate so GitHub Pages serves the correct file
-            window.location.href = target;
-          });
-        });
-      });
-    })();
-  </script>
 </head>
 <body>
   <header>
@@ -91,14 +63,12 @@
     <div id="server-info-box">
       <h2>Server Information</h2>
       <p>Server is 1.21.5 version and it's running papermc with good performance, java only.</p>
-      <p>IP Address: <span id="server-ip">mc.orange.run.place</span></p>
+      <p>IP Address: <span id="server-ip">mc.oranges.lt</span></p>
       <button id="copy-ip">Copy IP</button>
     </div>
     <div class="bottom-right-text">
       Orange MC © 2025
     </div>
   </main>
-
-  <script src="script.js"></script>
 </body>
 </html>
