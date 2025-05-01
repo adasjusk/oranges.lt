@@ -1,2 +1,2 @@
-# orange.run.place
-Orange Server Website On Github Here: https://orange.run.place
+# oranges.lt
+Orange Server Website On Github Here: https://oranges.lt
