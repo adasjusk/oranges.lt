@@ -11,12 +11,12 @@
     history.replaceState(null, '', path.slice(0, -5));
   }
 
-  // 2) Randomize background image once all assets are loaded
+  // Set a specific background image once all assets are loaded
   window.addEventListener('load', () => {
-    const images = ['image.png', 'image2.png'];
-    const randomImage = images[Math.floor(Math.random() * images.length)];
-    document.body.style.backgroundImage = `url('${randomImage}')`;
+    const specificImage = 'image.png'; // Change this to your desired image
+    document.body.style.backgroundImage = `url('${specificImage}')`;
   });
+
 
   document.addEventListener('DOMContentLoaded', () => {
     // 3) Intercept clicks on .html links to use clean URLs
