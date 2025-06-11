@@ -1,0 +1,417 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #161616;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.95;
+    pointer-events: none;
+}
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+}
+header {
+    position: sticky;
+    top: 0;
+    background-color: rgba(22, 22, 22, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #333;
+    padding: 10px 20px;
+    z-index: 1000;
+}
+
+.header-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 0;
+}
+
+.site-title {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 0;
+}
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+.button {
+    background: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 12px 24px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    border-radius: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+.button:not(:last-child) {
+    margin-right: 20px;
+}
+
+.nav-btn {
+    background: none;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.nav-btn.discord-btn {
+    color: #5865f2;
+}
+
+.nav-btn.discord-btn:hover {
+    color: #4752c4;
+    transform: translateY(-1px);
+}
+
+.nav-btn:hover {
+    color: rgba(255, 255, 255, 0.7);
+    transform: translateY(-1px);
+}
+.titlepagehero {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 20px;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.titlepagehero h1 {
+    font-size: 68px;
+    margin-bottom: 20px;
+}
+
+.titlepagehero h2 {
+    font-size: 24px;
+    margin-bottom: 40px;
+    font-weight: normal;
+}
+
+.hero-logo {
+    height: 120px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    margin-top: 40px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 0 40px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.centercontents {
+    text-align: center;
+}
+
+h1, h2, h3 {
+    color: rgb(252, 252, 252);
+    margin-top: 0;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+.cta-btn {
+    display: inline-block;
+    margin-top: 32px;
+    background: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 17px 45px;
+    font-size: 23px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 0;
+    transition: all 0.2s ease;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.cta-btn.discord-btn {
+    background: #ffffff;
+    color: #000000;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+}
+
+.cta-btn.discord-btn:hover {
+    background: #ffffff;
+    box-shadow: 0 0 45px rgba(255, 255, 255, 1);
+}
+
+.cta-btn:hover {
+    background: #000000;
+    color: #232323;
+}
+
+
+.site-title {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+.cta-btn.discord-btn {
+    background: #5e5ce2 !important;
+    color: #000000 !important;
+    box-shadow: 0 0 15px rgba(92, 103, 226) !important;
+}
+
+body.minecraft-page .discord-btn,
+body.terms-page .discord-btn {
+    box-shadow: none !important;
+    background: #5865f2 !important;
+    color: #ffffff !important;
+}
+
+body.minecraft-page .discord-btn:hover,
+body.terms-page .discord-btn:hover {
+    box-shadow: none !important;
+    background: #4752c4 !important;
+    color: #ffffff !important;
+}
+
+.nbt {
+    display: inline-block;
+    margin-top: 40px;
+    background: #f3f3f3;
+    color: #000000;
+    border: none;
+    padding: 16px 42px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.nbt:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.nbt:hover {
+    background: #ffffff;
+    box-shadow: 0 0 45px rgba(255, 255, 255, 0.8);
+    transform: translateY(-2px);
+}
+
+.nbt:hover:before {
+    left: 100%;
+}
+
+@media (max-width: 1200px) {
+    .header-content {
+        padding: 0 20px;
+    }
+    
+    .container {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        padding: 0 15px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .nav-btn {
+        padding: 10px 16px;
+        font-size: 14px;
+        flex: 1;
+        min-width: 100px;
+    }
+
+    .logo-container {
+        gap: 10px;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .site-title {
+        font-size: 18px;
+    }
+
+    .container {
+        margin: 30px auto;
+        padding: 20px;
+    }
+
+    .titlepagehero {
+        padding: 20px;
+        margin: 30px auto;
+    }
+
+    .titlepagehero h1 {
+        font-size: 36px;
+    }
+
+    .titlepagehero h2 {
+        font-size: 18px;
+    }
+
+    .hero-logo {
+        height: 80px;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .button {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content {
+        padding: 0 10px;
+    }
+
+    .nav-btn {
+        padding: 8px 12px;
+        font-size: 13px;
+        min-width: auto;
+    }
+
+    .titlepagehero h1 {
+        font-size: 28px;
+    }
+
+    .titlepagehero h2 {
+        font-size: 16px;
+    }
+
+    .hero-logo {
+        height: 60px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}
+
+/* Roadmap styles */
+.roadmap-image {
+    margin: 30px auto;
+    text-align: center;
+}
+
+.roadmap-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+@media screen and (max-width: 600px) {
+    .roadmap-image {
+        margin: 20px -20px;
+    }
+    
+    .roadmap-img {
+        border-radius: 0;
+    }
+}
+
+.footercopyrighttext {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    margin: 40px 0 20px 0;
+}
