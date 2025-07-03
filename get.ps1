@@ -11,19 +11,18 @@ if (-not $isAdmin) {
 }
 
 # Define download URL and path
-$CommonURLPart = 'bostr.exe'
-$DownloadURL1 = 'https://raw.githubusercontent.com/adasjusk/OrangeBooster/main/' + $CommonURLPart
+$CommonURLPart = 'orangbostr.exe'
+$DownloadURL1 = 'https://github.com/adasjusk/OrangBooster/releases/download/7.0/' + $CommonURLPart
 
-$rand = Get-Random -Maximum 99999999
-$AppDataPath = Join-Path -Path $env:APPDATA -ChildPath 'InterJava-Programs'
+$ProgramDataPath = Join-Path -Path "C:\ProgramData" -ChildPath 'InterJava-Programs'
 
 # Create directory if it doesn't exist
-if (-not (Test-Path -Path $AppDataPath)) {
-    New-Item -Path $AppDataPath -ItemType Directory | Out-Null
+if (-not (Test-Path -Path $ProgramDataPath)) {
+    New-Item -Path $ProgramDataPath -ItemType Directory -Force | Out-Null
 }
 
-# Set file path for the downloaded executable
-$FilePath = Join-Path -Path $AppDataPath -ChildPath "bostr_$rand.exe"
+# Set file path for the downloaded executable (no random)
+$FilePath = Join-Path -Path $ProgramDataPath -ChildPath "orangboost.exe"
 
 # Download the executable
 try {
