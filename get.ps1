@@ -39,7 +39,7 @@ $process.WaitForExit()
 
 # Report the result
 if ($process.ExitCode -eq 0) {
-    Write-Host "Have a good day, bye 👋."
+    Write-Host "Have a good day, bye!"
 } else {
     Write-Host "Program exited with code $($process.ExitCode)."
 }
