@@ -89,10 +89,12 @@ nav {
   border-radius: 0;
   transition: all 0.3s ease;
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  margin-right: 20px;
+  box-sizing: border-box;
 }
 
-.button:not(:last-child) {
-  margin-right: 20px;
+.button:last-child {
+  margin-right: 0;
 }
 
 .nav-btn {
@@ -268,6 +270,13 @@ body.terms-page .discord-btn:hover {
   left: 100%;
 }
 
+@media (max-width: 1200px) {
+  .header-content,
+  .container {
+    padding: 0 20px;
+  }
+}
+
 @media (max-width: 768px) {
   header {
     padding: 12px 24px;
@@ -334,7 +343,7 @@ body.terms-page .discord-btn:hover {
     transition: all 0.3s ease;
     text-decoration: none;
   }
-  
+
   .nav-btn.discord-btn {
     color: #5865f2;
   }
@@ -350,54 +359,22 @@ body.terms-page .discord-btn:hover {
   }
 
   .hero-buttons {
+    display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 15px;
+    margin-top: 40px;
   }
 
   .button {
     width: 100%;
     max-width: 300px;
-    margin: 0;
+    margin: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box;
     text-align: center;
-  }
-}
-
-@media (max-width: 1200px) {
-  .header-content,
-  .container {
-    padding: 0 20px;
-  }
-}
-
-@media (max-width: 768px) {
-  .container {
-    margin: 30px auto;
-    padding: 20px;
-  }
-
-  .titlepagehero {
-    padding: 20px;
-    margin: 30px auto;
-  }
-
-  .titlepagehero h1 {
-    font-size: 36px;
-  }
-
-  .titlepagehero h2 {
-    font-size: 18px;
-  }
-
-  .hero-logo {
-    height: 80px;
-  }
-
-  h1 {
-    font-size: 28px;
-  }
-
-  p {
-    font-size: 16px;
+    float: none !important;
   }
 }
 
@@ -443,7 +420,7 @@ body.terms-page .discord-btn:hover {
   .roadmap-image {
     margin: 20px -20px;
   }
-  
+
   .roadmap-img {
     border-radius: 0;
   }
