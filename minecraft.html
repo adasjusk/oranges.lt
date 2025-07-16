@@ -36,7 +36,7 @@
     document.addEventListener("DOMContentLoaded", () => {
       let rssItems = [];
       let currentIndex = 0;
-
+  
       async function loadRSS() {
         try {
           const response = await fetch('/rss.xml');
@@ -53,22 +53,25 @@
           document.getElementById("update-list").innerHTML = "<li>Failed to load updates.</li>";
         }
       }
-
+  
       function displayUpdate(index) {
         if (!rssItems.length || index >= rssItems.length) return;
         const update = rssItems[index];
+  
         const lines = update.description
-          .split(/<br\s*\/?>/i)
-          .filter(line => line.trim() !== "");
-        const listHTML = lines.map(line => `<li>${line.trim()}</li>`).join("\n");
+          .split(/<br\s*\/?>/gi)
+          .map(line => line.trim())
+          .filter(line => line.length > 0);
+  
+        const listHTML = lines.map(line => `<li>${line}</li>`).join("\n");
         document.getElementById("update-list").innerHTML = listHTML;
       }
-
+  
       document.getElementById("next-update").addEventListener("click", () => {
         currentIndex = (currentIndex + 1) % rssItems.length;
         displayUpdate(currentIndex);
       });
-
+  
       loadRSS();
     });
   </script>
@@ -77,6 +80,26 @@
   <style>
     body {
       cursor: url('data:image/x-icon;base64,AAACAAEAICAAAAAAAACoCAAAFgAAACgAAAAgAAAAQAAAAAEACAAAAAAAAAQAAAAAAAAAAAAAAAEAAAAAAAAAAAAAGBoOAEdPGwAdIQgAHCQIAB8lAgAdKAIAdoA3AKrBKQAiJwgArMkmAFBiFQCuySYAsMgsAMbhNwDJ6i4Aw+BPAA80SgAWHgAAt9UmAM3oOgAbIQAAGCUDAB0hAAC60jgAHSQJAB4kCQAfJAkAICQJAKO4RQAfKAwAgIgjAB1KXwBYYBkAx+syACkyDwDJ6TUAtNUnAMvpNQDK6jgAzOk1ABMfDQAFHi4AHCUEAB4oBAAeJgcAICsEAMbyJAAdSGMAyegzABUZBQBZZhoA0Oc5AM/pPwC62i4AKTE6AB4kCwAfIg4AHyQLACAiDgAgKQgAAypKACMkCwCtxCwArsYpAK7KIwDF5ygAsMojAMfmNwCdvRgAyeQ6AJytOQAoZY0AGB0AAMvsNwC20ywAzew3ACFNagAbJAMA0OpDALrYMgAdJQYAECAtAB4jCQCnwyoAJCMJAKnIJwB6ji8Av+U1AK7GKgCwxioAq8kzAFFiGQBUZBYAOT0yAMnrLADK6ywAxeBKADxCLwDL5jgAy+oyAAAgLgDM7y8At9IqABU1SABqal0AGiAKAHeFJwAdJQcAHiUHACAnBAB9iiQAq8kiAKzDKwCtxyUAl6ssABdNYwDG4zkAyOs2ABtLbwAVGQgAFDNMADRrhgDT6z8AMTwWACAkCA==" ), auto;
+    }
+    /* Styling the small next button */
+    #next-update {
+      margin-top: 10px;
+      background-color: white;
+      color: black;
+      border: 1.5px solid black;
+      font-size: 18px;
+      width: 30px;
+      height: 30px;
+      border-radius: 4px;
+      cursor: pointer;
+      user-select: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+    }
+    #next-update:hover {
+      background-color: #f0f0f0;
     }
   </style>
 
@@ -123,7 +146,7 @@
         <ul id="update-list">
           <li>Loading updates...</li>
         </ul>
-        <button id="next-update" style="margin-top:10px;">Next Update</button>
+        <button id="next-update">&gt;</button>
         <div style="font-size:0.94em;color:#aaa;margin-top:18px;">
           Updated: 2025-05-19
         </div>
