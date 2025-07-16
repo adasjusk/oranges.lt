@@ -35,36 +35,34 @@ header {
   background-color: rgba(22, 22, 22, 0.95);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid #333;
-  padding: 10px 20px;
   z-index: 1000;
 }
 
 .header-content {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 12px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
 }
 
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 15px;
-  margin: 0;
+  gap: 10px;
+  flex-shrink: 0;
 }
 
 .logo {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   object-fit: contain;
-  margin-bottom: 0;
 }
 
 .site-title {
   color: #fff;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -72,29 +70,10 @@ header {
 
 nav {
   display: flex;
-  gap: 20px;
-}
-
-.button {
-  background: #ffffff;
-  color: #000000;
-  border: none;
-  padding: 12px 24px;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  text-decoration: none;
-  border-radius: 0;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-  margin-right: 20px;
-  box-sizing: border-box;
-}
-
-.button:last-child {
-  margin-right: 0;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 18px;
+  flex-grow: 1;
 }
 
 .nav-btn {
@@ -153,9 +132,28 @@ nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
   gap: 15px;
   margin-top: 40px;
+}
+
+.button {
+  background: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 12px 24px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border-radius: 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  text-align: center;
+  min-width: 150px;
+  flex: 1 1 150px;
+  max-width: 300px;
 }
 
 .container {
@@ -278,103 +276,71 @@ body.terms-page .discord-btn:hover {
 }
 
 @media (max-width: 768px) {
-  header {
-    padding: 12px 24px;
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: rgba(22, 22, 22, 0.95);
-    border-bottom: 1px solid #333;
-    backdrop-filter: blur(12px);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-
   .header-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 12px 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
     gap: 10px;
   }
 
-  .logo-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-shrink: 0;
+  nav {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .nav-btn {
+    padding: 10px 16px;
+    font-size: 14px;
   }
 
   .logo {
     width: 36px;
     height: 36px;
-    object-fit: contain;
   }
 
   .site-title {
-    color: #fff;
     font-size: 18px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
   }
 
-  nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 18px;
-    flex-grow: 1;
+  .container {
+    margin: 30px auto;
+    padding: 20px;
   }
 
-  .nav-btn {
-    background: none;
-    color: #ffffff;
-    border: none;
-    padding: 10px 16px;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-    text-decoration: none;
+  .titlepagehero {
+    padding: 20px;
+    margin: 30px auto;
   }
 
-  .nav-btn.discord-btn {
-    color: #5865f2;
+  .titlepagehero h1 {
+    font-size: 36px;
   }
 
-  .nav-btn.discord-btn:hover {
-    color: #4752c4;
-    transform: translateY(-1px);
+  .titlepagehero h2 {
+    font-size: 18px;
   }
 
-  .nav-btn:hover {
-    color: rgba(255, 255, 255, 0.7);
-    transform: translateY(-1px);
+  .hero-logo {
+    height: 80px;
   }
 
   .hero-buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    margin-top: 40px;
+    flex-direction: column !important;
+    align-items: center !important;
   }
 
   .button {
-    width: 100%;
-    max-width: 300px;
+    width: 100% !important;
+    max-width: 300px !important;
     margin: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    box-sizing: border-box;
-    text-align: center;
-    float: none !important;
+    flex: none !important;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  p {
+    font-size: 16px;
   }
 }
 
