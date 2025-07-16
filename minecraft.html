@@ -60,7 +60,7 @@
         const lines = update.description
           .split(/<br\s*\/?>/i)
           .filter(line => line.trim() !== "");
-        const listHTML = lines.map(line => `<li>${line.trim()}</li>`).join("");
+        const listHTML = lines.map(line => `<li>${line.trim()}</li>`).join("\n");
         document.getElementById("update-list").innerHTML = listHTML;
       }
 
