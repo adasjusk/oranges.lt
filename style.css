@@ -1,14 +1,12 @@
-/* RESET */
+/* === RESET === */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* BASE */
+/* === BASE === */
 body {
-  margin: 0;
-  padding: 0;
   font-family: 'Arial', sans-serif;
   background-color: #161616;
   color: #ffffff;
@@ -33,34 +31,30 @@ body::before {
   50% { transform: translateY(-20px) rotate(180deg); }
 }
 
-/* HEADER */
+/* === HEADER === */
 header {
   position: sticky;
   top: 0;
   background-color: rgba(22, 22, 22, 0.95);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid #333;
-  padding: 10px 20px;
   z-index: 1000;
 }
 
 .header-content {
-  max-width: 1100px;
-  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 12px 24px;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
 }
 
-/* LOGO */
 .logo-container {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 5px 0;
+  flex-shrink: 0;
 }
 
 .logo {
@@ -71,20 +65,18 @@ header {
 
 .site-title {
   color: #fff;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-/* NAVIGATION */
 nav {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  width: 100%;
-  margin-top: 10px;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 18px;
+  flex-grow: 1;
 }
 
 .nav-btn {
@@ -115,7 +107,7 @@ nav {
   transform: translateY(-1px);
 }
 
-/* HERO SECTION */
+/* === HERO SECTION === */
 .titlepagehero {
   max-width: 1100px;
   margin: 60px auto;
@@ -140,7 +132,6 @@ nav {
   font-weight: normal;
 }
 
-/* HERO BUTTONS */
 .hero-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -168,7 +159,6 @@ nav {
   min-width: 150px;
 }
 
-/* CONTAINERS */
 .container {
   max-width: 1100px;
   margin: 80px auto;
@@ -193,7 +183,7 @@ h1 {
   text-transform: uppercase;
 }
 
-/* CTA BUTTONS */
+/* === CTA Buttons === */
 .cta-btn {
   display: inline-block;
   margin-top: 32px;
@@ -228,7 +218,7 @@ h1 {
   color: #232323;
 }
 
-/* PAGE OVERRIDES */
+/* === Page Overrides === */
 body.minecraft-page .discord-btn,
 body.terms-page .discord-btn {
   box-shadow: none !important;
@@ -242,7 +232,7 @@ body.terms-page .discord-btn:hover {
   color: #ffffff !important;
 }
 
-/* FANCY BUTTON */
+/* === Fancy NBT Button === */
 .nbt {
   display: inline-block;
   margin-top: 40px;
@@ -269,12 +259,7 @@ body.terms-page .discord-btn:hover {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255, 255, 255, 0.3),
-    transparent
-  );
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
   transition: 0.5s;
 }
 
@@ -288,7 +273,7 @@ body.terms-page .discord-btn:hover {
   left: 100%;
 }
 
-/* RESPONSIVE */
+/* === Responsive === */
 @media (max-width: 1200px) {
   .header-content,
   .container {
@@ -298,23 +283,19 @@ body.terms-page .discord-btn:hover {
 
 @media (max-width: 768px) {
   .header-content {
-    padding: 0 15px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
   }
 
   nav {
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 10px;
   }
 
   .nav-btn {
     padding: 10px 16px;
     font-size: 14px;
-    flex: 1;
-    min-width: 100px;
-  }
-
-  .logo-container {
-    gap: 10px;
   }
 
   .logo {
@@ -393,7 +374,7 @@ body.terms-page .discord-btn:hover {
   }
 }
 
-/* ROADMAP */
+/* === Roadmap Styles === */
 .roadmap-image {
   margin: 30px auto;
   text-align: center;
@@ -415,7 +396,7 @@ body.terms-page .discord-btn:hover {
   }
 }
 
-/* FOOTER */
+/* === Footer === */
 .footercopyrighttext {
   font-size: 12px;
   color: rgba(255, 255, 255, 0.6);
