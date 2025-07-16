@@ -91,10 +91,11 @@ nav {
     display: flex;
     gap: 32px;
     justify-content: center;
-    align-items: stretch;
+    align-items: flex-start;
 }
 .mc-card {
     flex: 1;
+    height: 100%;
     background: rgba(36,36,36,0.98);
     box-shadow: 0 2px 14px rgba(0,0,0,0.22);
     padding: 36px 32px 32px 32px;
