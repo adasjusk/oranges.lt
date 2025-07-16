@@ -1,7 +1,8 @@
+/* RESET */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 /* BASE */
@@ -27,7 +28,6 @@ body::before {
   pointer-events: none;
 }
 
-/* ANIMATIONS */
 @keyframes float {
   0%, 100% { transform: translateY(0px) rotate(0deg); }
   50% { transform: translateY(-20px) rotate(180deg); }
@@ -52,20 +52,20 @@ header {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 10px 20px;
 }
 
-/* LOGO & TITLE */
+/* LOGO */
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 15px;
-  margin: 0;
+  gap: 10px;
+  padding: 5px 0;
 }
 
 .logo {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   object-fit: contain;
 }
 
@@ -142,11 +142,12 @@ nav {
 
 /* HERO BUTTONS */
 .hero-buttons {
-  margin-top: 40px;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
   gap: 15px;
+  margin-top: 40px;
 }
 
 .button {
@@ -163,12 +164,11 @@ nav {
   border-radius: 0;
   transition: all 0.3s ease;
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-  width: 90%;
-  max-width: 300px;
   text-align: center;
+  min-width: 150px;
 }
 
-/* CONTENT SECTIONS */
+/* CONTAINERS */
 .container {
   max-width: 1100px;
   margin: 80px auto;
@@ -183,7 +183,6 @@ nav {
 
 h1, h2, h3 {
   color: rgb(252, 252, 252);
-  margin-top: 0;
   font-weight: 700;
   letter-spacing: 1px;
   margin-bottom: 25px;
@@ -191,7 +190,6 @@ h1, h2, h3 {
 
 h1 {
   font-size: 48px;
-  margin-bottom: 20px;
   text-transform: uppercase;
 }
 
@@ -230,7 +228,7 @@ h1 {
   color: #232323;
 }
 
-/* MINECRAFT / TERMS OVERRIDES */
+/* PAGE OVERRIDES */
 body.minecraft-page .discord-btn,
 body.terms-page .discord-btn {
   box-shadow: none !important;
@@ -244,7 +242,7 @@ body.terms-page .discord-btn:hover {
   color: #ffffff !important;
 }
 
-/* OTHER BUTTONS */
+/* FANCY BUTTON */
 .nbt {
   display: inline-block;
   margin-top: 40px;
@@ -271,7 +269,12 @@ body.terms-page .discord-btn:hover {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
   transition: 0.5s;
 }
 
@@ -285,7 +288,7 @@ body.terms-page .discord-btn:hover {
   left: 100%;
 }
 
-/* RESPONSIVE BREAKPOINTS */
+/* RESPONSIVE */
 @media (max-width: 1200px) {
   .header-content,
   .container {
@@ -315,8 +318,8 @@ body.terms-page .discord-btn:hover {
   }
 
   .logo {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
   }
 
   .site-title {
@@ -345,9 +348,13 @@ body.terms-page .discord-btn:hover {
     height: 80px;
   }
 
+  .hero-buttons {
+    flex-direction: column;
+  }
+
   .button {
     width: 100%;
-    text-align: center;
+    max-width: 300px;
   }
 
   h1 {
@@ -386,7 +393,7 @@ body.terms-page .discord-btn:hover {
   }
 }
 
-/* Roadmap Section */
+/* ROADMAP */
 .roadmap-image {
   margin: 30px auto;
   text-align: center;
@@ -408,7 +415,7 @@ body.terms-page .discord-btn:hover {
   }
 }
 
-/* Footer */
+/* FOOTER */
 .footercopyrighttext {
   font-size: 12px;
   color: rgba(255, 255, 255, 0.6);
