@@ -9,15 +9,15 @@
     <item>
       <title>Server Update #4</title>
       <description>
-        - Update to 1.21.7<br/>
-        - Fix exploits<br/>
-        - Add some plugins<br/>
-        - Fix error with permissions<br/>
-        - Increase size of homes<br/>
-        - Fix Discord bot<br/>
-        - Autorestart<br/>
-        - New versions of plugins<br/>
-        - Add RSS
+         Update to 1.21.7<br/>
+         Fix exploits<br/>
+         Add some plugins<br/>
+         Fix error with permissions<br/>
+         Increase size of homes<br/>
+         Fix Discord bot<br/>
+         Autorestart<br/>
+         New versions of plugins<br/>
+         Add RSS
       </description>
       <pubDate>Tue, 16 Jul 2025 14:00:00 +0000</pubDate>
     </item>
@@ -25,13 +25,13 @@
     <item>
       <title>Server Update #3</title>
       <description>
-        - Disabled Antipopup (enabling soon!)<br/>
-        - Removed death messages<br/>
-        - Disabled image frames (enabling soon!)<br/>
-        - Switched to 1.21.6<br/>
-        - Added support for old versions<br/>
-        - Server has more stability<br/>
-        - Fixed tab plugin showing old server website
+         Disabled Antipopup (enabling soon!)<br/>
+         Removed death messages<br/>
+         Disabled image frames (enabling soon!)<br/>
+         Switched to 1.21.6<br/>
+         Added support for old versions<br/>
+         Server has more stability<br/>
+         Fixed tab plugin showing old server website
       </description>
       <pubDate>Tue, 09 Jul 2025 14:00:00 +0000</pubDate>
     </item>
@@ -39,14 +39,14 @@
     <item>
       <title>Server Update #2</title>
       <description>
-        - Added Bedrock support<br/>
-        - New operating system<br/>
-        - New domain: mc.oranges.lt<br/>
-        - Removed city<br/>
-        - Native 1.21.5<br/>
-        - Fixed commands<br/>
-        - Better SSL for website<br/>
-        - Fixed some dangerous exploits
+         Added Bedrock support<br/>
+         New operating system<br/>
+         New domain: mc.oranges.lt<br/>
+         Removed city<br/>
+         Native 1.21.5<br/>
+         Fixed commands<br/>
+         Better SSL for website<br/>
+         Fixed some dangerous exploits
       </description>
       <pubDate>Tue, 02 Jul 2025 14:00:00 +0000</pubDate>
     </item>
@@ -54,20 +54,20 @@
     <item>
       <title>Server Update #1</title>
       <description>
-        - /kill added<br/>
-        - Server optimized<br/>
-        - /stuck added<br/>
-        - Removed annoying "chat isn't secure" popup<br/>
-        - Better commands<br/>
-        - Permissions and roles fixed<br/>
-        - Command permissions fixed<br/>
-        - New home plugin<br/>
-        - New highways in Nether<br/>
-        - New currency: EUR<br/>
-        - 1 MIL border increasing soon!<br/>
-        - /tp deleted<br/>
-        - Custom death<br/>
-        - Random spawn location
+         /kill added<br/>
+         Server optimized<br/>
+         /stuck added<br/>
+         Removed annoying "chat isn't secure" popup<br/>
+         Better commands<br/>
+         Permissions and roles fixed<br/>
+         Command permissions fixed<br/>
+         New home plugin<br/>
+         New highways in Nether<br/>
+         New currency: EUR<br/>
+         1 MIL border increasing soon!<br/>
+         /tp deleted<br/>
+         Custom death<br/>
+         Random spawn location
       </description>
       <pubDate>Tue, 25 Jun 2025 14:00:00 +0000</pubDate>
     </item>
