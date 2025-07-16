@@ -127,6 +127,7 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-top: 12px;
 }
 .ip-block {
     background: #232323;
@@ -138,9 +139,6 @@ h1 {
     border: 2px solid #444;
     border-radius: 0;
     font-size: 1.07em;
-}
-.server-info .join-btn {
-    margin-top: 12px;
 }
 .ip-block strong {
     color: orange;
@@ -164,7 +162,7 @@ h1 {
     color: #222;
     border: none;
     padding: 16px 0;
-    margin-top: 30px;
+    margin-top: 12px;
     font-size: 1.2em;
     font-weight: bold;
     width: 100%;
