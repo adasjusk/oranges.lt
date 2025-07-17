@@ -136,13 +136,12 @@ nav {
   margin-top: 40px;
 }
 
-/* === COMPACT DESKTOP BUTTONS === */
 .button {
   background: #ffffff;
   color: #000000;
   border: none;
-  padding: 8px 18px;     /* compact padding */
-  font-size: 16px;       /* compact font */
+  padding: 8px 18px;            /* Smaller button size */
+  font-size: 16px;
   font-weight: bold;
   cursor: pointer;
   text-transform: uppercase;
@@ -152,7 +151,7 @@ nav {
   transition: all 0.3s ease;
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
   text-align: center;
-  min-width: 120px;
+  min-width: 130px;
   flex: 0 0 auto;
   max-width: none;
 }
@@ -276,7 +275,6 @@ body.terms-page .discord-btn:hover {
   }
 }
 
-/* === MOBILE STACKED BUTTONS === */
 @media (max-width: 768px) {
   .header-content {
     flex-direction: column;
@@ -326,18 +324,17 @@ body.terms-page .discord-btn:hover {
   }
 
   .hero-buttons {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+    flex-direction: column !important;
+    align-items: center !important;
   }
 
   .button {
-    width: 90%;
-    max-width: 300px;
-    margin: 10px 0;
-    font-size: 18px;
-    padding: 12px 24px;
-    flex: none;
+    width: 90% !important;
+    max-width: 300px !important;
+    margin: 10px 0 !important;
+    font-size: 18px !important;
+    padding: 12px 24px !important;
+    flex: none !important;
   }
 
   h1 {
