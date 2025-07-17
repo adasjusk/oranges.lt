@@ -333,12 +333,15 @@ body.terms-page .discord-btn:hover {
   }
 
   .button {
-    width: 90% !important;
-    max-width: 300px !important;
-    margin: 10px 0 !important;
+    width: 165px !important;
+    height: 48px !important;
+    padding: 0 !important;
+    line-height: 48px !important;
     font-size: 18px !important;
-    padding: 12px 24px !important;
-    flex: none !important;
+    margin: 10px 0 !important;
+    flex: 0 0 auto !important;
+    min-width: 165px !important;
+    max-width: 165px !important;
   }
 
   h1 {
