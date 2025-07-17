@@ -275,6 +275,7 @@ body.terms-page .discord-btn:hover {
   }
 }
 
+/* === FIXED HERO BUTTONS FOR MOBILE === */
 @media (max-width: 768px) {
   .header-content {
     flex-direction: column;
@@ -324,15 +325,17 @@ body.terms-page .discord-btn:hover {
   }
 
   .hero-buttons {
-    flex-direction: column !important;
-    align-items: center !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
   }
 
   .button {
-    width: 100% !important;
-    max-width: 300px !important;
-    margin: 0 !important;
-    flex: none !important;
+    width: 90%;
+    max-width: 300px;
+    margin: 10px 0;
+    flex: none;
   }
 
   h1 {
