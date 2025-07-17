@@ -150,14 +150,16 @@ nav {
   border-radius: 0;
   transition: all 0.3s ease;
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-  text-align: center;
+  display: flex;              /* flexbox centering */
+  align-items: center;        /* vertical center */
+  justify-content: center;    /* horizontal center */
   width: 165px;               /* fixed width */
   height: 48px;               /* fixed height */
-  line-height: 48px;          /* vertical center text */
   box-sizing: border-box;     /* include border/padding in size */
-  min-width: 165px;           /* match fixed width */
-  max-width: 165px;           /* match fixed width */
+  min-width: 165px;           /* prevent resizing */
+  max-width: 165px;
   flex: 0 0 auto;             /* disable grow/shrink */
+  line-height: normal;        /* reset line-height (flex handles centering) */
 }
 
 .container {
