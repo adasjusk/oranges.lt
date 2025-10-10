@@ -1,24 +1,159 @@
-Here will be status (for some time):
-OK - Everything Works | OTHER - You will know | ERROR - Problem
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orange Servers</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="status.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src=".img/logo.png" alt="Orange Logo" class="logo">
+                <h1 class="site-title">ORANGE STATUS</h1>
+            </div>
+            <nav>
+                <a href="index.html" class="nav-btn">HOME</a>
+                <a href="minecraft.html" class="nav-btn">MINECRAFT</a>
+                <a href="software.html" class="nav-btn">SOFTWARE</a>
+                <a href="https://discord.gg/cpkfnRuRv7" class="nav-btn discord-btn" target="_blank">DISCORD</a>
+            </nav>
+        </div>
+    </header>
 
-Orange MC:
-Java: OK
-Bedrock: Error
+    <div class="container">
+        <div class="centercontents">
+            <h1>Server Status Dashboard</h1>
+            <p>Real-time status monitoring for Orange services and servers</p>
+            <div class="status-legend">
+                <span class="legend-item"><span class="status-indicator online"></span> Online</span>
+                <span class="legend-item"><span class="status-indicator warning"></span> Warning</span>
+                <span class="legend-item"><span class="status-indicator offline"></span> Offline</span>
+                <span class="legend-item"><span class="status-indicator checking"></span> Checking...</span>
+            </div>
+        </div>
 
-Orange DC:
-Server: OK
-Chats: Needs update
+        <div class="status-grid">
+            <!-- Gaming Servers -->
+            <div class="status-category">
+                <h2>Gaming Servers</h2>
+                
+                <div class="status-item">
+                    <div class="status-header">
+                        <h3>SCP: Secret Laboratory</h3>
+                        <span class="status-indicator checking" id="scp-status"></span>
+                    </div>
+                    <div class="status-details">
+                        <p class="server-address">78.61.47.144:7777</p>
+                    </div>
+                </div>
 
-Orange Website:
-Host: OK
-Domain: OK
-IP: OK
-Media Updated: Needs update
+                <div class="status-item">
+                    <div class="status-header">
+                        <h3>Minecraft Java Edition</h3>
+                        <span class="status-indicator checking" id="mc-java-status"></span>
+                    </div>
+                    <div class="status-details">
+                        <p class="server-address">mc.oranges.lt</p>
+                    </div>
+                </div>
 
-Orange Github Apps:
-OrangBoost: Needs update
-OrangInstall: Needs update
-OrangCalc: OK
-OrangWlp: Needs update
-OrangCtx: OK
-Stuck? Plugin: Needs update 
+                <div class="status-item">
+                    <div class="status-header">
+                        <h3>Minecraft Bedrock Edition</h3>
+                        <span class="status-indicator checking" id="mc-bedrock-status"></span>
+                    </div>
+                    <div class="status-details">
+                        <p class="server-address">play.oranges.lt:19132</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Orange Services -->
+            <div class="status-category">
+                <h2>Orange Services</h2>
+                
+                <div class="status-item">
+                    <div class="status-header">
+                        <h3>Discord Server</h3>
+                        <span class="status-indicator online" id="discord-status"></span>
+                    </div>
+                    <div class="status-details">
+                        <div class="status-info">
+                            <span class="service-status">Server: Online</span>
+                            <span class="service-status">Chats: Active</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="status-item">
+                    <div class="status-header">
+                        <h3>Orange Website</h3>
+                        <span class="status-indicator online" id="website-status"></span>
+                    </div>
+                    <div class="status-details">
+                        <div class="status-info">
+                            <span class="service-status">Host: Online</span>
+                            <span class="service-status">Domain: Active</span>
+                            <span class="service-status">CDN: Active</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Applications -->
+            <div class="status-category">
+                <h2>Orange Applications</h2>
+                
+                <div class="status-grid-apps">
+                    <div class="app-status">
+                        <span class="app-name">OrangBoost</span>
+                        <span class="status-indicator warning"></span>
+                    </div>
+                    <div class="app-status">
+                        <span class="app-name">OrangInstall</span>
+                        <span class="status-indicator warning"></span>
+                    </div>
+                    <div class="app-status">
+                        <span class="app-name">OrangCalc</span>
+                        <span class="status-indicator online"></span>
+                    </div>
+                    <div class="app-status">
+                        <span class="app-name">OrangWlp</span>
+                        <span class="status-indicator warning"></span>
+                    </div>
+                    <div class="app-status">
+                        <span class="app-name">OrangCtx</span>
+                        <span class="status-indicator online"></span>
+                    </div>
+                    <div class="app-status">
+                        <span class="app-name">Stuck? Plugin</span>
+                        <span class="status-indicator online"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="centercontents">
+            <p class="last-updated">Last updated: <span id="last-updated">Never</span></p>
+            <button class="cta-btn" onclick="refreshStatus()">Refresh Status</button>
+            <div class="api-info">
+                <p><strong>About Status Checking:</strong></p>
+                <p>• Minecraft servers use multiple APIs (mcsrvstat.us, mcstatus.io, mcapi.us, minetools.eu) for maximum accuracy</p>
+                <p>• SCP:SL server status is checked via SCPList.kr API and web interface</p>
+                <p>• Tries multiple API endpoints for maximum reliability and real-time data</p>
+                <p>• <strong>Manual check:</strong> You can always verify SCP:SL status directly at <a href="https://scplist.kr/servers/94815" target="_blank">SCPList Server Page</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footercopyrighttext">
+        © 2025 Orange. Real-time server monitoring.
+    </div>
+
+    <script src="status-checker.js"></script>
+</body>
+</html>
