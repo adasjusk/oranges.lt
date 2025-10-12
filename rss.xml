@@ -7,6 +7,22 @@
     <language>en-us</language>
 
     <item>
+      <title>Server Update #6</title>
+      <description>
+         Updated to 1.21.9 and 1.21.10
+         Stuck plugin 1.21.10
+         Updated all plugins
+         Rmotd created
+         Forked pv-reminder
+         KillC created
+         Anti-popup temporarily disabled
+         Fixed Anarchy Exploits
+         Better System Management
+      </description>
+      <pubDate>Sun, 12 Oct 2025 14:00:00 +0000</pubDate>
+    </item>
+
+    <item>
       <title>Server Update #5</title>
       <description>
          Updated to 1.21.7 and 1.21.8
