@@ -29,12 +29,19 @@
      "logo": "https://oranges.lt/logo.png"
     }
     </script>
-    <style>        .apps-grid { 
+    <style>
+        .container h1,
+        .container h2 {
+            text-align: center;
+        }
+
+        .apps-grid { 
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 32px;
             margin-top: 44px;
             padding: 0 20px;
+            margin-bottom: 64px;
         }
 
         @media (max-width: 768px) {
@@ -130,13 +137,14 @@
                 <a href="index.html"><button class="nav-btn">Home</button></a>
                 <a href="roadmap.html"><button class="nav-btn">Roadmap</button></a>
                 <a href="creators.html"><button class="nav-btn">Creators</button></a>
+                <a href="status.html"><button class="nav-btn">Status</button></a>
+                <a href="minecraft.html"><button class="nav-btn">Minecraft</button></a>
                 <a href="https://discord.gg/cpkfnRuRv7" target="_blank"><button class="nav-btn discord-btn">Discord</button></a>
             </nav>
-        </nav>
     </header>
     <main class="container">
-        <h1>Orange Apps</h1>
-        <h2>There will be releases</h2>
+        <h1>Orange Apps & Plugins</h1>
+        <h2>Applications</h2>
         <div class="apps-grid">            <div class="app-card">                <div>
                     <div class="app-name">OrangCalc</div>
                     <div>Simple Calculator for Windows x32 bit Systems</div>
@@ -156,26 +164,35 @@
             </div>
             <div class="app-card">
                 <div>
-                    <div class="app-name">OrangDebloat</div>
-                    <div>Remove unwanted bloat and optimize your game</div>
+                    <div class="app-name">OrangContex</div>
+                    <div>The way to change context menu in windows</div>
                 </div>
-                <a href="https://github.com/adasjusk/OrangDebloat/releases/" target="_blank">
+                <a href="https://github.com/InterJava-Studio/OrangContext/releases/" target="_blank">
                     <button class="download-btn">Download</button>
                 </a>
             </div>
             <div class="app-card">
                 <div>
-                    <div class="app-name">Stuck</div>
-                    <div>Simple /stuck plugin for minecraft servers</div>
+                    <div class="app-name">InstaDownload</div>
+                    <div>Instagram videos downloader</div>
                 </div>
-                <a href="https://github.com/adasjusk/Stuck/releases/" target="_blank">
+                <a href="https://github.com/InterJava-Studio/InstaDownload/releases/" target="_blank">
+                    <button class="download-btn">Download</button>
+                </a>
+            </div>
+            <div class="app-card">
+                <div>
+                    <div class="app-name">OrangMSS</div>
+                    <div>Microsoft Store Installer with one cmd file!</div>
+                </div>
+                <a href="https://github.com/adasjusk/OrangMSS/releases/" target="_blank">
                     <button class="download-btn">Download</button>
                 </a>
             </div>
             <div class="app-card">
                 <div>
                     <div class="app-name">OrangWallpapers</div>
-                    <div>Best wallpaper changer for windows</div>
+                    <div>Wallpaper changer for windows</div>
                 </div>
                 <a href="https://github.com/adasjusk/OrangWallpapers/releases/" target="_blank">
                     <button class="download-btn">Download</button>
@@ -183,13 +200,159 @@
             </div>
             <div class="app-card">
                 <div>
-                    <div class="app-name">OrangContex</div>
+                    <div class="app-name">OrangYT</div>
+                    <div>YouTube videos/music downloader for windows</div>
+                </div>
+                <a href="https://github.com/InterJava-Studio/OrangYT/releases/" target="_blank">
+                    <button class="download-btn">Download</button>
+                </a>
+            </div>
+            <div class="app-card">
+                <div>
+                    <div class="app-name">OrangInstall</div>
+                    <div>Best installer for windows applications</div>
+                </div>
+                <a href="https://github.com/InterJava-Studio/OrangInstall/releases/" target="_blank">
+                    <button class="download-btn">Download</button>
+                </a>
+            </div>
+            <div class="app-card">
+                <div>
+                    <div class="app-name">OrangSign</div>
+                    <div>Signs applications with InterJava Certificate</div>
+                </div>
+                <a href="https://github.com/InterJava-Studio/OrangSign/releases/" target="_blank">
+                    <button class="download-btn">Download</button>
+                </a>
+            </div>
+            <div class="app-card">
+                <div>
+                    <div class="app-name">OrangLaunch</div>
+                    <div>Minecraft launcher for windows and linux (still making, arch also btw)</div>
+                </div>
+                <a href="https://github.com/InterJava-Studio/OrangLaunch/releases/" target="_blank">
+                    <button class="download-btn">Download</button>
+                </a>
+            </div>
+            <div class="app-card">
+                <div>
+                    <div class="app-name">OrangTheme</div>
+                    <div>Theme for HyDE Arch desktop</div>
+                </div>
+                <a href="https://github.com/InterJava-Studio/OrangTheme/" target="_blank">
+                    <button class="download-btn">Download</button>
+                </a>
+            </div>
+            <div class="app-card">
+                <div>
+                <div class="app-name">OrangContex</div>
                     <div>The way to change context menu in windows</div>
                 </div>
                 <a href="https://github.com/adasjusk/ContexOrang/releases/" target="_blank">
                     <button class="download-btn">Download</button>
-                </a>            </div>
-        </div>        <p class="footercopyrighttext">© 2025 oranges.lt</p>
+                </a>
+            </div>
+        </div>
+
+        <h2>SCP:Secret Laboratory Plugins (LabApi)</h2>
+        <div class="apps-grid">
+            <div class="app-card">
+                <div>
+                    <div class="app-name">FunnyPils</div>
+                    <div>Lightweight server tweaks that add playful consumable events for SCP:SL rounds.</div>
+                </div>
+                <a href="https://github.com/adasjusk/FunnyPils" target="_blank" rel="noopener noreferrer">
+                    <button class="download-btn">Download</button>
+                </a>
+            </div>
+            <div class="app-card">
+                <div>
+                    <div class="app-name">RgdCleanup</div>
+                    <div>Automatically tidies up lingering explosives to keep matches stable and smooth.</div>
+                </div>
+                <a href="https://github.com/adasjusk/RgdCleanup" target="_blank" rel="noopener noreferrer">
+                    <button class="download-btn">Download</button>
+                </a>
+            </div>
+            <div class="app-card">
+                <div>
+                    <div class="app-name">AutoTFF</div>
+                    <div>Manages friendly fire states based on server rules to reduce unwanted infractions.</div>
+                </div>
+                <a href="https://github.com/adasjusk/AutoTFF" target="_blank" rel="noopener noreferrer">
+                    <button class="download-btn">Download</button>
+                </a>
+            </div>
+            <div class="app-card">
+                <div>
+                    <div class="app-name">IOPRestart</div>
+                    <div>Automates server restarts on schedule so administrators can focus on players.</div>
+                </div>
+                <a href="https://github.com/adasjusk/IOPRestart" target="_blank" rel="noopener noreferrer">
+                    <button class="download-btn">Download</button>
+                </a>
+            </div>
+            <div class="app-card">
+                <div>
+                    <div class="app-name">LateSpawn</div>
+                    <div>Provides late-joining players a fair spawn window without disrupting live rounds.</div>
+                </div>
+                <a href="https://github.com/adasjusk/LateSpawn" target="_blank" rel="noopener noreferrer">
+                    <button class="download-btn">Download</button>
+                </a>
+            </div>
+            <div class="app-card">
+                <div>
+                    <div class="app-name">Scanner</div>
+                    <div>Real-time scanning utilities that surface player insights for quick moderation calls.</div>
+                </div>
+                <a href="https://github.com/adasjusk/Scanner" target="_blank" rel="noopener noreferrer">
+                    <button class="download-btn">Download</button>
+                </a>
+            </div>
+        </div>
+
+        <h2>Minecraft Plugins</h2>
+        <div class="apps-grid">
+            <div class="app-card">
+                <div>
+                    <div class="app-name">RMotd</div>
+                    <div>Rotating message-of-the-day system to keep server greetings fresh and informative.</div>
+                </div>
+                <a href="https://github.com/adasjusk/RMotd" target="_blank" rel="noopener noreferrer">
+                    <button class="download-btn">Download</button>
+                </a>
+            </div>
+            <div class="app-card">
+                <div>
+                    <div class="app-name">pv-reminder</div>
+                    <div>Friendly reminders that help players keep personal vaults and kits on schedule.</div>
+                </div>
+                <a href="https://github.com/adasjusk/pv-reminder" target="_blank" rel="noopener noreferrer">
+                    <button class="download-btn">Download</button>
+                </a>
+            </div>
+            <div class="app-card">
+                <div>
+                    <div class="app-name">killc</div>
+                    <div>Lightweight kill counter with scoreboard integration for competitive events.</div>
+                </div>
+                <a href="https://github.com/adasjusk/KillC" target="_blank" rel="noopener noreferrer">
+                    <button class="download-btn">Download</button>
+                </a>
+            </div>
+            <div class="app-card">
+                <div>
+                    <div class="app-name">stuck</div>
+                    <div>/stuck rescue command for players who clip into geometry during adventures.</div>
+                </div>
+                <a href="https://github.com/adasjusk/Stuck" target="_blank" rel="noopener noreferrer">
+                    <button class="download-btn">Download</button>
+                </a>
+            </div>
+        </div>
+
+        <p class="footercopyrighttext">© 2025 oranges.lt</p>
     </main>
     <script src="script.js"></script>
 </body>

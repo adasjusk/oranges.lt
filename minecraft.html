@@ -72,6 +72,7 @@
   
         const listHTML = lines.map(line => `<li>${line}</li>`).join("\n");
         document.getElementById("update-list").innerHTML = listHTML;
+        document.getElementById("update-title").textContent = update.title;
       }
   
       document.getElementById("next-update").addEventListener("click", () => {
@@ -132,6 +133,7 @@
       <nav>
         <a href="index.html"><button class="nav-btn">Home</button></a>
         <a href="terms.html"><button class="nav-btn">Terms</button></a>
+        <a href="status.html"><button class="nav-btn">Status</button></a>
         <a href="https://discord.gg/cpkfnRuRv7" target="_blank"><button class="nav-btn discord-btn">Discord</button></a>
       </nav>
     </div>
@@ -146,7 +148,7 @@
           Welcome to Orange MC, the best anarchy Minecraft server where chaos meets creativity. In this lawless world, there are no rules, no resets, and no limits to what you can achieve. Build, destroy, raid, and explore a vast, ungoverned landscape where your imagination and survival skills are the only boundaries.
         </p>
 
-        <h2 style="margin-top:30px;margin-bottom:6px;font-size:1.07em;">Latest Updates</h2>
+        <h2 id="update-title" style="margin-top:30px;margin-bottom:6px;font-size:1.07em;">Latest Updates</h2>
         <ul id="update-list">
           <li>Loading updates...</li>
         </ul>

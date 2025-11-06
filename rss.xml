@@ -7,6 +7,28 @@
     <language>en-us</language>
 
     <item>
+      <title>I'm Sorry Update #7</title>
+      <description>
+         I will have to apologize, i dind't secure server properly and it got hacked, so he deleted everything, so i had to recrate everything from scratch, im really sorry for that, i will try to make it better and more secure...
+         Added Autosort plugin
+         Fixed some exploits
+         Updated server
+         Added new security measures
+         Improved backup system (periodic backups to new nvme drive that will be secured from system)
+         Banned few countries/continents: Russia, China, Africa, Antarctica because of high hack attempts from there (mostly vpns)
+         Forked pv-reminder and improved it
+         Better TAB
+         Improved performance
+         Switched from Paper to Purpur
+         Fixed Issues with plugins
+         So after reset only spawn was present, so i left it in this server for nostalgia of old times :)
+         I'm planning of forking authme and Protoclib to make it better secured and more lightweight
+         I'm really sorry...
+      </description>
+      <pubDate>Mon, 3 Nov 2025 21:00:00 +0000</pubDate>
+    </item>
+
+    <item>
       <title>Server Update #6</title>
       <description>
          Updated to 1.21.9 and 1.21.10
