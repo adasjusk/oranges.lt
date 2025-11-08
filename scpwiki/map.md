@@ -1,0 +1,6 @@
+  - [SCP Wiki](main.md)
+  - [Authors](authors.md)
+  - [SCP](scp.md)
+  - [Plugins](plugins.md)
+  - [Development Team](devs.md)
+  - [Tutorial](tutorial.md)

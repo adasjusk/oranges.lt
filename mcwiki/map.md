@@ -1,0 +1,6 @@
+  - [Oranges MC Wiki](main.md)
+  - [About](about.md)
+  - [History](history.md)
+  - [The World](world.md)
+  - [Plugins](plugins.md)
+  - [Contact](contact.md)

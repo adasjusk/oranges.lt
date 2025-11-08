@@ -35,17 +35,6 @@ body {
   gap: 18px;
 }
 
-.announcement-badge {
-  background: rgba(0, 0, 0, 0.2);
-  color: #fff7e6;
-  font-size: 12px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  padding: 6px 12px;
-  border-radius: 999px;
-  flex: 0 0 auto;
-}
-
 .announcement-message {
   flex: 1 1 auto;
   font-size: 16px;
