@@ -42,4 +42,7 @@ This is more ment for community and it's servers and also this server things
   <li><a href="tutorial.md">Tutorial</a> - This is a tutorial for players who started to play this game</li>
   <li><a href="communiy.md">The Community</a> - Here you will find why server got created and what about community.</li>
 </ul>
+
+
+*If server not listed in the main list then here is ip of the server: scp.oranges.lt
 </div>
