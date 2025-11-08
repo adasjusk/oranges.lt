@@ -30,17 +30,17 @@
 Theese pages are ment for only this server and this server's system and theese pages more about how server works and what uses
 
 <ul class="indented-list">
-  <li><a href="plugins.md">Plugins List</a> - All of intresting plugins on Orange SCP.</li>
-  <li><a href="scp.md">SCP's</a> - A list of scp's and items that were changed</li>
-  <li><a href="authors.md">Authors</a> - This is like a copyright but not, so yeah</li>
+  <li><a href="https://oranges.lt/scpwiki/index.html?page=plugins.md">Plugins List</a> - All of intresting plugins on Orange SCP.</li>
+  <li><a href="https://oranges.lt/scpwiki/index.html?page=scp.md">SCP's</a> - A list of scp's and items that were changed</li>
+  <li><a href="https://oranges.lt/scpwiki/index.html?page=authors.md">Authors</a> - This is like a copyright but not, so yeah</li>
 </ul>
 
 <h2>Community Info</h2>
 This is more ment for community and it's servers and also this server things
 <ul class="indented-list">
-  <li><a href="devs.md">Development Team</a> - Report to them any bugs, problems, issues and bad server runtime</li>
-  <li><a href="tutorial.md">Tutorial</a> - This is a tutorial for players who started to play this game</li>
-  <li><a href="communiy.md">The Community</a> - Here you will find why server got created and what about community.</li>
+  <li><a href="https://oranges.lt/scpwiki/index.html?page=devs.md">Development Team</a> - Report to them any bugs, problems, issues and bad server runtime</li>
+  <li><a href="https://oranges.lt/scpwiki/index.html?page=tutorial.md">Tutorial</a> - This is a tutorial for players who started to play this game</li>
+  <li><a href="https://oranges.lt/scpwiki/index.html?page=communiy.md">The Community</a> - Here you will find why server got created and what about community.</li>
 </ul>
 
 

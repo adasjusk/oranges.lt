@@ -1,8 +1,8 @@
-# So if you want to make any suggestions regarding the content of the server then contact the development team listed below.
+# Contact development & administration support.
 
 <h2>Development Team</h2>
 
-Mail: mailto:software@oranges.lt
+Mail: software@oranges.lt
 this sends a mail to our development team.
 
 <h2>Contact examples</h2>
@@ -14,7 +14,7 @@ Subject: Mail provided up
 
 Hello, Orange Devs
 So i found that bug and etc...
-(optional discord usrn): 
+(optional discord username): 
 Writer Name
 ```
 
@@ -24,19 +24,19 @@ Title: [Add Feature] Name of feature
 Subject: Mail provided up
 
 Hi, Orange Devs
-So i want this amaizing feature etc...
-(optional discord usrn): 
+So i want this amazing feature etc...
+(optional discord username): 
 Writer Name
 ```
 
 Unban:
 ```
-Title: Pleaaasee unban me 
+Title: Please unban me 
 Subject: Mail provided up
 
 Hi, Orange Devs
-pleaaase unban mee i didn't cheat or fuck up 😭😭😭
-(optional discord usrn): 
+please unban mee i didn't cheat or fuck up 😭😭😭
+(optional discord username): 
 Writer Name
 ```
 
@@ -47,7 +47,7 @@ Subject: Mail provided up
 
 Hi, Orange Devs
 I abused or other abused or i had problem
-(optional discord usrn):
+(optional discord username):
 Writer Name
 ```
 
@@ -58,6 +58,6 @@ Subject: Mail provided up
 
 Hi, Orange Devs
 I have this unknown thing to tell you
-(optional discord usrn): 
+(optional discord username): 
 Writer Name
 ```

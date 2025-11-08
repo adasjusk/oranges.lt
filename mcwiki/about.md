@@ -20,4 +20,4 @@ Welcome to Orange MC, the best anarchy Minecraft server where chaos meets creati
 
 
 So recently /spawn got removed and now you have to /kill yourself to randomly spawn after dying, 
-/spawn got removed because of harder gameplay and better usage of /kill.
+/spawn got removed because of harder game and better usage of /kill.

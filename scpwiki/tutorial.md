@@ -42,15 +42,15 @@ So on my side i will tell you about keycards and stuff that you would find in th
 <h2>Starting from Keycards:</h3>
 The keycards have levels, points.
 So there is three things the cards can access: Rooms, Armory, Other
-If there is bigger count of points on cards it have bigger privilages than lower cards
-Every Thing, doors, armory, chambers have diffrent requrements for cards.
+If there is bigger count of points on cards it have bigger privileges than lower cards
+Every Thing, doors, armory, chambers have different requirements for cards.
 <h4>Access Level 1 Cards</h4>
 
 <img src="https://hub.scpslgame.com/images/thumb/2/24/Reworked_Facility_Guard_Keycard.png/75px-Reworked_Facility_Guard_Keycard.png" width="50" height="50" style="box-shadow: none;"> Facility guard's security card - This card spawns with the guard and it cannot unlock the surface exit but can only go to the Light Containment zone
 
-<img src="https://hub.scpslgame.com/images/thumb/0/06/Reworked_Janitor_Keycard.png/75px-Reworked_Janitor_Keycard.png" width="50" height="50" style="box-shadow: none;"> Janitor Card - this role doesn't exsist in Secret Labaratory by default and it's low level card and it have one point, it's based in light Containment zone
+<img src="https://hub.scpslgame.com/images/thumb/0/06/Reworked_Janitor_Keycard.png/75px-Reworked_Janitor_Keycard.png" width="50" height="50" style="box-shadow: none;"> Janitor Card - this role doesn't exist in Secret Laboratory by default and it's low level card and it have one point, it's based in light Containment zone
 
-<img src="https://hub.scpslgame.com/images/thumb/8/83/Reworked_Scientist_Keycard.png/75px-Reworked_Scientist_Keycard.png" width="50" height="50" style="box-shadow: none;"> Scientist Card - this role exsists and spawns in the Light Containment with this card, it's low level and can access the scp's rooms
+<img src="https://hub.scpslgame.com/images/thumb/8/83/Reworked_Scientist_Keycard.png/75px-Reworked_Scientist_Keycard.png" width="50" height="50" style="box-shadow: none;"> Scientist Card - this role exists and spawns in the Light Containment with this card, it's low level and can access the scp's rooms
 
 <img src="https://hub.scpslgame.com/images/thumb/e/e2/Reworked_Zone_Manager_Keycard.png/75px-Reworked_Zone_Manager_Keycard.png" width="50" height="50" style="box-shadow: none;"> Zone Manager - This ain't a role, but a card to some rooms.
 
@@ -76,25 +76,25 @@ Some NTF/CI Cards/Devices - So this is when on some things cards theese work but
 
 <img src="https://hub.scpslgame.com/images/thumb/4/4b/Facility_Manager_Keycard_Fixed.png/75px-Facility_Manager_Keycard_Fixed.png" width="50" height="50" style="box-shadow: none;"> Facility Manager - The 2nd highest card for operating facility but it don't unlock armory.
 
-<img src="https://hub.scpslgame.com/images/thumb/8/8a/Reworked_O5_Keycard.png/75px-Reworked_O5_Keycard.png" width="50" height="50" style="box-shadow: none;"> o5 Personel Card - The best of the all cards that exsist in this game, you can get it from SCP-914 Chamber and it can unlock everything in facility.
+<img src="https://hub.scpslgame.com/images/thumb/8/8a/Reworked_O5_Keycard.png/75px-Reworked_O5_Keycard.png" width="50" height="50" style="box-shadow: none;"> o5 Personnel Card - The best of the all cards that exist in this game, you can get it from SCP-914 Chamber and it can unlock everything in facility.
 
 <h3>SCP's</h3>
 
-So i will tell more about scp-xxx anomalies, but thier main goal is to kill all classes and win the round. They have diffrent abilities.
+So i will tell more about scp-xxx anomalies, but thier main goal is to kill all classes and win the round. They have different abilities.
 Some SCP's aren't anomalies some are items that you can get with the keycard.
 
 <h4>Anomalies</h4>
 SCP-049 - Famous old style scientist that tried to cure Pestilence virus. He instead kills people and makes them into:
 
-SCP-049-2 - As i said the people who get killed and then "resurrected" into zombies that kill other classes. They are the shittest scp that exsist in the game.
+SCP-049-2 - As i said the people who get killed and then "resurrected" into zombies that kill other classes. They are the worst scp that exist in the game.
 
 SCP-079 - The Old AI or know as Technician who controls the facility and helps scp's to win, he can kill people by the tesla gate. To kill him you need to turn all of the generators and wait, there will be good loot and a red button that you shoot
 
-SCP-096 - Big white creature that gets really mad if you look at him, he have really good speed and insta kills if he is angry.
+SCP-096 - Big white creature that gets really mad if you look at him, he have really good speed and instantly kills if he is angry.
 
 SCP-106 - The silence man who likes silence but in this scp game he attacks players and sends them to Pocket dimension where players die or get lucky and escape. This haves few things more! When you press Tab button you can go with that to nearby room with that. Pressing shift makes you go to the ground and silently go to other place.
 
-SCP-173 - So this is contraversial scp, because it's model not original and it's revorked heavly the [real](https://www.scaithebathhouse.com/en/exhibitions/2005/04/izumi_kato/) model. So this is like teleporting scp, if you look at it, it cannot attack you but if you look away he insta kills you.
+SCP-173 - This model not original and it's reworked heavly the [real](https://www.scaithebathhouse.com/en/exhibitions/2005/04/izumi_kato/) model. So this is like teleporting scp, if you look at it, it cannot attack you but if you look away he instantly kills you.
 
 SCP-939 - The Dog or big red Harper, it has inabilities to see people, but it can hear people. it can crawl, lunge, sprint, focus and more. 
 
@@ -106,7 +106,7 @@ That's it for this list next is:
 
 For this list i will not tell the event specific things but here are items that give abilities:
 
-SCP-207 - CocaCola it gives speed but lowers health slowly.
+SCP-207 - Coca Cola it gives speed but lowers health slowly.
 
 SCP-127 - My favorite, it's a gun that gives you AHP and talks to you, it's kinda funny that weapon talks to you but it helps really well.
 
@@ -126,7 +126,7 @@ SCP-2176 - Bulb that bricks all doors, lights and electronic things for some tim
 
 SCP-330 - The candy bowl grab 2 candy you have 2 grab 3 candy you die. This also gives on my server pink candy that explodes on eating.
 
-SCP-914 - Best SCP in the game that ubgrades or downgrades items once they are in input
+SCP-914 - Best SCP in the game that upgrades or downgrades items once they are in input
 
 <h2>Weapons:</h2>
 
@@ -157,8 +157,8 @@ Oh weapons! So i cannot list all of weapons so you can read about them in this w
 
 <h2>Alpha Warhead & Overcharge:</h2>
 
-<img src="https://hub.scpslgame.com/images/thumb/f/fe/NEWWarheadCAT.png/120px-NEWWarheadCAT.png" width="50" height="50" style="box-shadow: none; vertical-align: top;"> <span style="display: inline-block; vertical-align: top; max-width: calc(100% - 60px);">Alpha Warhead - The Thing that you turn on in the Heavy Containment Zone by flipping the lever in that room that you find by searching for two elevators next to each other. There is also cancel button on right side of lever that deactivates the boom boom. Where is the activator you may ask? It's on surface in small room that requres Level 3 Keycard to activate. Once it's enabled and activated, you can't turn off it in that room where you activated (Sruface), you have to go to where you enebled it (Heavy Containment zone's lever that enables it) and press red button</span>
+<img src="https://hub.scpslgame.com/images/thumb/f/fe/NEWWarheadCAT.png/120px-NEWWarheadCAT.png" width="50" height="50" style="box-shadow: none; vertical-align: top;"> <span style="display: inline-block; vertical-align: top; max-width: calc(100% - 60px);">Alpha Warhead - Thing that you activate in the Heavy Containment Zone by pressing a lever in the room you find by searching for the two elevators nearby. There is also a cancel button to the right of the lever that deactivates the explosion. Where is the activator, you may ask? It is on the surface, in a small room that requires a level 3 keycard to activate. Once it is activated and activated, you cannot deactivate it in the room where you activated it (the Surface), you must go to where you activated it (the lever in the Heavy Containment Zone that activates it) and press the red button.</span>
 
-<img src="https://hub.scpslgame.com/images/thumb/4/4c/OVERCHARGECAT2.png/120px-OVERCHARGECAT2.png" width="50" height="50" style="box-shadow: none; vertical-align: top;"> <span style="display: inline-block; vertical-align: top; max-width: calc(100% - 60px);">Overcharge - Is a Mechanic in SCP: Secret Laboratory that cause Heavy Containment Zone to be overloaded with power, this opens SCP-079 Doors and allows players to shutdown SCP-079 also this shutdowns for few seconds lights and gives absolute darkness. How to activate it? Turn on all 3 [generators](https://en.scpslgame.com/index.php?title=Emergency_Power_Station) and wait for initialization and it will give overcharge.</span>
+<img src="https://hub.scpslgame.com/images/thumb/4/4c/OVERCHARGECAT2.png/120px-OVERCHARGECAT2.png" width="50" height="50" style="box-shadow: none; vertical-align: top;"> <span style="display: inline-block; vertical-align: top; max-width: calc(100% - 60px);">Overcharge - is a mechanic in the game SCP: Secret Laboratory that overloads the heavy containment area with energy. This opens the door to SCP-079 and allows players to disable SCP-079, as well as turning off the lights for a few seconds and creating complete darkness. How to activate it? Turn on all 3 [generators] (https://en.scpslgame.com/index.php?title=Emergency_Power_Station) and wait for initialization, after which it will overcharge system.</span>
 
-Made by adasjusk
+Created by adasjusk

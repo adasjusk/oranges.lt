@@ -16,4 +16,4 @@
 ## SCP-173 (Peanut)
 - Have 50% to drop bomb and explode quickly
 
-For more reach me out if you want more modifications!
+For more reach me out, if you want more modifications!

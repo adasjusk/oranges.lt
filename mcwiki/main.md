@@ -36,16 +36,16 @@
 So this will tell you about various in-game features of Orange MC, including about administration, world, history, plugins and more!
 
 <ul class="indented-list">
-  <li><a href="plugins.md">Plugins List</a> - Contains information on each of the plugins in Orange MC.</li>
-  <li><a href="world.md">The World</a> - The world is almost 2 years old and has undergone significant changes over time.</li>
-  <li><a href="about.md">About</a> - Learn more about the Orange MC server, its features, and its community.</li>
+  <li><a href="https://oranges.lt/scpwiki/index.html?page=plugins.md">Plugins List</a> - Contains information on each of the plugins in Orange MC.</li>
+  <li><a href="https://oranges.lt/scpwiki/index.html?page=world.md">The World</a> - The world is almost 2 years old and has undergone significant changes over time.</li>
+  <li><a href="https://oranges.lt/scpwiki/index.html?page=about.md">About</a> - Learn more about the Orange MC server, its features, and its community.</li>
 </ul>
 
 <h2>Community Info</h2>
 
 <ul class="indented-list">
-  <li><a href="contact.md">Contacts</a> - Report to them any bugs, problems, issues and bad server runtime</li>
-  <li><a href="history.md">History</a> - This hosts most of the orange mc, ltuservermc and beetroots servers history.</li>
+  <li><a href="https://oranges.lt/scpwiki/index.html?page=contact.md">Contacts</a> - Report to them any bugs, problems, issues and bad server runtime</li>
+  <li><a href="https://oranges.lt/scpwiki/index.html?page=history.md">History</a> - This hosts most of the orange mc, ltuservermc and beetroots servers history.</li>
 </ul>
 
 </div>

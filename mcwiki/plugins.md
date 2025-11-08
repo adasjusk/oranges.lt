@@ -1,6 +1,6 @@
 # Plugins
 
-- AntiPopup - Hides client side popup on join.
+- AntiPopup - Hides client side pop up on join.
 - Autosort - Adds command that sorts chests.
 - DiscordSRV - Adds chat from mc to dc and vise versa.
 - Geyser - Port for Bedrock players.
@@ -15,7 +15,7 @@
 - Stuck - Unstucks you from places.
 - TabCompleteFilter - Filters unaccessible commands.
 - TAB - Enables custom tab bar.
-- ViaBackwards, ViaRewind and ViaVersion - Enables support for old verions of minecraft.
+- ViaBackwards, ViaRewind and ViaVersion - Enables support for old versions of minecraft.
 
 Theese are community based plugins and all of them are free.
 Some plugins may not be there for security reasons of exploits.
