@@ -27,12 +27,11 @@ body {
 }
 
 .announcement-inner {
-  max-width: 1200px;
-  margin: 0 auto;
   padding: 12px 24px;
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 12px;
+  width: 100%;
 }
 
 .announcement-message {
@@ -43,7 +42,7 @@ body {
 }
 
 .announcement-message .announcement-link {
-  margin-left: 12px;
+  margin-left: 19px;
 }
 
 .announcement-link {
@@ -130,12 +129,11 @@ header {
 }
 
 .header-content {
-  max-width: 1200px;
-  margin: 0 auto;
   padding: 12px 24px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .logo-container {
@@ -161,10 +159,9 @@ header {
 
 nav {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
   gap: 18px;
-  flex-grow: 1;
+  margin-left: auto;
 }
 
 .nav-btn {
@@ -231,7 +228,7 @@ nav {
   background: #ffffff;
   color: #000000;
   border: none;  
-  padding: 0;                 /* remove padding to control height precisely */
+  padding: 0;
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
@@ -241,16 +238,16 @@ nav {
   border-radius: 0;
   transition: all 0.3s ease;
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-  display: flex;              /* flexbox centering */
-  align-items: center;        /* vertical center */
-  justify-content: center;    /* horizontal center */
-  width: 165px;               /* fixed width */
-  height: 48px;               /* fixed height */
-  box-sizing: border-box;     /* include border/padding in size */
-  min-width: 165px;           /* prevent resizing */
+  display: flex; 
+  align-items: center;    
+  justify-content: center;
+  width: 165px;
+  height: 48px;
+  box-sizing: border-box;
+  min-width: 165px; 
   max-width: 165px;
-  flex: 0 0 auto;             /* disable grow/shrink */
-  line-height: normal;        /* reset line-height (flex handles centering) */
+  flex: 0 0 auto;
+  line-height: normal;
 }
 
 .container {
@@ -366,7 +363,10 @@ body.terms-page .discord-btn:hover {
 }
 
 @media (max-width: 1200px) {
-  .header-content,
+  .header-content {
+    padding: 12px 20px;
+  }
+
   .container {
     padding: 0 20px;
   }
@@ -382,6 +382,8 @@ body.terms-page .discord-btn:hover {
   nav {
     justify-content: center;
     flex-wrap: wrap;
+    margin-left: 0;
+    padding-left: 0;
   }
 
   .nav-btn {
