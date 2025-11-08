@@ -64,14 +64,7 @@ class StatusChecker {
             const startTime = Date.now();
             
             // Try different methods to access SCPList API (CORS handling)
-            const apis = [
-                // Direct API call (may fail due to CORS)
-                'https://api.scplist.kr/api/servers/94815',
-                // AllOrigins CORS proxy
-                'https://api.allorigins.win/raw?url=' + encodeURIComponent('https://api.scplist.kr/api/servers/94815'),
-                // Backup proxy
-                'https://cors-anywhere.herokuapp.com/https://api.scplist.kr/api/servers/94815'
-            ];
+            const apis = this.getSCPApiEndpoints();
             
             let data = null;
             let lastError = null;
@@ -85,14 +78,11 @@ class StatusChecker {
                     console.log(`Attempting SCPList API call ${i + 1}/${apis.length}: ${apiUrl}`);
                     
                     const headers = {};
-                    if (apiUrl.includes('cors-anywhere')) {
-                        headers['X-Requested-With'] = 'XMLHttpRequest';
-                    }
-                    if (i === 0) {
+                    if (apiUrl.includes('api.scplist.kr')) {
                         headers['accept'] = 'application/json;charset=UTF-8';
                     }
                     
-                    const response = await this.fetchWithTimeout(apiUrl, 10000, headers);
+                    const response = await this.fetchWithTimeout(apiUrl, 12000, headers);
                     
                     if (!response.ok) {
                         throw new Error(`HTTP ${response.status}: ${response.statusText}`);
@@ -149,17 +139,18 @@ class StatusChecker {
             console.error('SCP server SCPList check failed:', error);
             
             // Show error state
-            statusEl.className = 'status-indicator warning';
-            
-            // Add manual check note
-            const statusItem = statusEl.closest('.status-item');
-            if (statusItem && !statusItem.querySelector('.manual-check-note')) {
-                const noteEl = document.createElement('p');
-                noteEl.className = 'manual-check-note';
-                noteEl.innerHTML = '⚠️ Auto-check failed. <a href="https://scplist.kr/servers/94815" target="_blank">Check SCPList manually</a>';
-                statusItem.querySelector('.status-details').appendChild(noteEl);
-            }
+            statusEl.className = 'status-indicator offline';
         }
+    }
+
+    getSCPApiEndpoints() {
+        const baseUrl = 'https://api.scplist.kr/api/servers/94815';
+        const proxies = [
+            'https://api.allorigins.win/raw?url=' + encodeURIComponent(baseUrl),
+            'https://cors.isomorphic-git.org/' + baseUrl
+        ];
+        const isLocal = typeof window !== 'undefined' && ['localhost', '127.0.0.1'].includes(window.location.hostname);
+        return isLocal ? [baseUrl, ...proxies] : [...proxies, baseUrl];
     }
 
     async checkMinecraftJava() {
