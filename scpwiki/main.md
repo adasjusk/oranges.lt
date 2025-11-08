@@ -40,7 +40,6 @@ This is more ment for community and it's servers and also this server things
 <ul class="indented-list">
   <li><a href="https://oranges.lt/scpwiki/index.html?page=devs.md">Development Team</a> - Report to them any bugs, problems, issues and bad server runtime</li>
   <li><a href="https://oranges.lt/scpwiki/index.html?page=tutorial.md">Tutorial</a> - This is a tutorial for players who started to play this game</li>
-  <li><a href="https://oranges.lt/scpwiki/index.html?page=communiy.md">The Community</a> - Here you will find why server got created and what about community.</li>
 </ul>
 
 
