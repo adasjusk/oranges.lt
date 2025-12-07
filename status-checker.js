@@ -77,18 +77,20 @@ class StatusChecker {
                 try {
                     console.log(`Attempting SCPList API call ${i + 1}/${apis.length}: ${apiUrl}`);
                     
-                    const headers = {};
-                    if (apiUrl.includes('api.scplist.kr')) {
-                        headers['accept'] = 'application/json;charset=UTF-8';
-                    }
-                    
-                    const response = await this.fetchWithTimeout(apiUrl, 12000, headers);
+                    const response = await this.fetchWithTimeout(apiUrl, 12000);
                     
                     if (!response.ok) {
                         throw new Error(`HTTP ${response.status}: ${response.statusText}`);
                     }
                     
-                    data = await response.json();
+                    let responseData = await response.json();
+                    
+                    // Handle allorigins.win wrapper format
+                    if (responseData.contents) {
+                        responseData = JSON.parse(responseData.contents);
+                    }
+                    
+                    data = responseData;
                     ping = Date.now() - attemptStartTime;
                     
                     console.log(`SCPList API success on attempt ${i + 1}:`, data);
@@ -97,11 +99,7 @@ class StatusChecker {
                 } catch (error) {
                     console.warn(`SCPList API attempt ${i + 1} failed:`, error.message);
                     lastError = error;
-                    
-                    // Don't continue if it's clearly a network issue
-                    if (error.name === 'AbortError' || error.message.includes('fetch')) {
-                        continue;
-                    }
+                    continue;
                 }
             }
             
@@ -138,19 +136,20 @@ class StatusChecker {
         } catch (error) {
             console.error('SCP server SCPList check failed:', error);
             
-            // Show error state
-            statusEl.className = 'status-indicator offline';
+            // Show warning state instead of offline when we can't verify
+            statusEl.className = 'status-indicator warning';
+            statusEl.title = 'Unable to verify status - check manually';
         }
     }
 
     getSCPApiEndpoints() {
         const baseUrl = 'https://api.scplist.kr/api/servers/94815';
         const proxies = [
-            'https://api.allorigins.win/raw?url=' + encodeURIComponent(baseUrl),
-            'https://cors.isomorphic-git.org/' + baseUrl
+            'https://corsproxy.io/?' + encodeURIComponent(baseUrl),
+            'https://api.allorigins.win/get?url=' + encodeURIComponent(baseUrl),
+            baseUrl // Try direct as last resort (will only work on production with proper CORS)
         ];
-        const isLocal = typeof window !== 'undefined' && ['localhost', '127.0.0.1'].includes(window.location.hostname);
-        return isLocal ? [baseUrl, ...proxies] : [...proxies, baseUrl];
+        return proxies;
     }
 
     async checkMinecraftJava() {
@@ -269,7 +268,7 @@ class StatusChecker {
         }
     }
 
-    async fetchWithTimeout(url, timeout = 5000, headers = {}) {
+    async fetchWithTimeout(url, timeout = 5000) {
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), timeout);
         
@@ -277,8 +276,7 @@ class StatusChecker {
             const response = await fetch(url, {
                 signal: controller.signal,
                 mode: 'cors',
-                cache: 'no-cache',
-                headers: headers
+                cache: 'no-cache'
             });
             clearTimeout(timeoutId);
             return response;

@@ -11,6 +11,7 @@ body {
     width: 150px;
     flex-shrink: 0; /* Prevent sidebar from shrinking */
     padding: 20px;
+    padding-top: 70px; /* Space for mobile menu button */
     border-right: 1px solid;
     overflow-y: auto;
 }
@@ -216,16 +217,16 @@ body.dark-theme code {
 }
 
 /* Content Area */
-#content h1, #content h2, #content h3 {
+#content h1, #content h3 {
     border-bottom: 1px solid;
     padding-bottom: 0.3em;
 }
 
-body.light-theme #content h1, body.light-theme #content h2, body.light-theme #content h3 {
+body.light-theme #content h1, body.light-theme #content h3 {
     border-color: #eaecef;
 }
 
-body.dark-theme #content h1, body.dark-theme #content h2, body.dark-theme #content h3 {
+body.dark-theme #content h1, body.dark-theme #content h3 {
     border-color: #30363d;
 }
 
@@ -256,14 +257,15 @@ body.dark-theme pre {
 /* Theme Switcher */
 #theme-switcher {
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 15px;
+    left: 59px;
     background: none;
     border: none;
     cursor: pointer;
-    padding: 5px;
-    width: 32px;
-    height: 32px;
+    padding: 8px;
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
 }
 
 body.light-theme #theme-switcher {
@@ -275,8 +277,8 @@ body.dark-theme #theme-switcher {
 }
 
 #theme-switcher svg {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     stroke: currentColor;
 }
 
@@ -300,6 +302,18 @@ body.dark-theme #content img {
     display: inline-block;
     vertical-align: middle;
     margin: 10px 15px 10px 0;
+}
+
+/* Ensure images in tables are also responsive */
+#content table img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Ensure all images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* Page Title with Icon */
@@ -416,4 +430,283 @@ body.dark-theme .link-button:hover {
 .indented-list li {
     margin: 10px 0;
     line-height: 1.6;
+}
+
+/* Mobile Menu Toggle Button */
+#mobile-menu-toggle {
+    display: none; /* Hidden by default on desktop */
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1001;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+}
+
+body.light-theme #mobile-menu-toggle {
+    color: #000;
+}
+
+body.dark-theme #mobile-menu-toggle {
+    color: #c9d1d9;
+}
+
+#mobile-menu-toggle svg {
+    width: 28px;
+    height: 28px;
+    stroke: currentColor;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    /* Mobile menu toggle visible on mobile */
+    #mobile-menu-toggle {
+        display: block;
+    }
+
+    /* Sidebar hidden by default on mobile */
+    #sidebar {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        z-index: 1000;
+        transition: left 0.3s ease;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        padding-top: 70px;
+    }
+
+    #sidebar.active {
+        left: 0;
+    }
+
+    body.light-theme #sidebar {
+        background-color: #fff;
+    }
+
+    body.dark-theme #sidebar {
+        background-color: #0d1117;
+    }
+
+    /* Overlay when sidebar is open */
+    body::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0);
+        pointer-events: none;
+        transition: background-color 0.3s ease;
+        z-index: 999;
+        opacity: 0;
+    }
+
+    body.sidebar-open::after {
+        background-color: rgba(0, 0, 0, 0.5);
+        pointer-events: all;
+        opacity: 1;
+    }
+
+    /* Content takes full width on mobile */
+    #content {
+        width: 100%;
+        padding: 70px 15px 20px 15px;
+        margin: 0;
+    }
+
+    /* Theme switcher repositioned on mobile */
+    #theme-switcher {
+        top: 15px;
+        right: 15px;
+        z-index: 998;
+    }
+
+    /* Adjust page title on mobile */
+    .page-title {
+        flex-direction: column;
+        gap: 8px;
+        margin: 10px 0 20px 0;
+    }
+
+    .page-title h1 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .page-title h2 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .title-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    /* Link buttons stack on mobile */
+    .link-buttons {
+        flex-direction: column;
+        gap: 10px;
+        margin: 20px auto;
+    }
+
+    .link-button {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+
+    /* Wiki content adjustments */
+    .wiki-content {
+        padding: 0 10px;
+        margin: 20px auto;
+    }
+
+    .wiki-content h2 {
+        font-size: 1.5rem;
+        margin: 20px 0 15px 0;
+    }
+
+    /* Images responsive on mobile */
+    #content img {
+        max-width: 100%;
+        margin: 15px auto;
+    }
+
+    #content p img {
+        max-width: 100%;
+        margin: 10px 0;
+        display: block;
+    }
+
+    /* Code blocks scroll on mobile */
+    pre {
+        overflow-x: auto;
+        font-size: 80%;
+        padding: 12px;
+    }
+
+    code {
+        font-size: 80%;
+        word-break: break-word;
+    }
+
+    /* Search container adjustments */
+    #search-container {
+        margin-bottom: 15px;
+    }
+
+    /* Search results container */
+    .search-results-container {
+        max-height: 300px;
+        font-size: 12px;
+    }
+
+    /* Navigation links */
+    #nav ul li {
+        margin: 8px 0;
+    }
+
+    #nav ul li a {
+        display: block;
+        padding: 5px 0;
+        font-size: 15px;
+    }
+
+    /* Tables scroll on mobile */
+    #content table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    /* Headings adjusted for mobile */
+    #content h1 {
+        font-size: 1.8rem;
+    }
+
+    #content h2 {
+        font-size: 1.5rem;
+    }
+
+    #content h3 {
+        font-size: 1.2rem;
+    }
+
+    /* Paragraphs and text content */
+    #content p {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    /* Lists on mobile */
+    .indented-list {
+        padding-left: 20px;
+    }
+}
+
+/* Tablet responsive styles */
+@media (max-width: 1024px) and (min-width: 769px) {
+    #sidebar {
+        width: 180px;
+    }
+
+    #content {
+        padding: 20px 25px;
+    }
+
+    .page-title h1 {
+        font-size: 2.2rem;
+    }
+
+    .page-title h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+    #content {
+        padding: 60px 10px 15px 10px;
+    }
+
+    .page-title h1 {
+        font-size: 1.5rem;
+    }
+
+    .page-title h2 {
+        font-size: 1.3rem;
+    }
+
+    #mobile-menu-toggle {
+        top: 10px;
+        left: 10px;
+        width: 40px;
+        height: 40px;
+    }
+
+    #theme-switcher {
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .link-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
 }

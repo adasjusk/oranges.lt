@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const content = document.getElementById('content');
     const nav = document.getElementById('nav');
     const themeSwitcher = document.getElementById('theme-switcher');
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const sidebar = document.getElementById('sidebar');
     const converter = new showdown.Converter({
         parseImgDimensions: true,
         simplifiedAutoLink: true,
@@ -13,6 +15,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" /></svg>`;
     const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" /></svg>`;
+
+    // --- Mobile Menu Toggle ---
+    mobileMenuToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('active');
+        document.body.classList.toggle('sidebar-open');
+    });
+
+    // Close sidebar when clicking on overlay
+    document.addEventListener('click', (e) => {
+        if (document.body.classList.contains('sidebar-open') && 
+            !sidebar.contains(e.target) && 
+            e.target !== mobileMenuToggle &&
+            !mobileMenuToggle.contains(e.target)) {
+            sidebar.classList.remove('active');
+            document.body.classList.remove('sidebar-open');
+        }
+    });
 
     // --- Theme Handling ---
     const applyTheme = (theme) => {
@@ -58,6 +77,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     e.preventDefault();
                     const page = e.target.getAttribute('href');
                     loadContent(page);
+                    // Close mobile menu when link is clicked
+                    sidebar.classList.remove('active');
+                    document.body.classList.remove('sidebar-open');
                 });
             });
         } catch (error) {
@@ -169,6 +191,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     loadContent(page);
                     searchInput.value = '';
                     searchResultsContainer.style.display = 'none';
+                    // Close mobile menu when search result is clicked
+                    sidebar.classList.remove('active');
+                    document.body.classList.remove('sidebar-open');
                 });
             });
         }
