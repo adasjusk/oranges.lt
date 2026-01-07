@@ -1,5 +1,5 @@
 <div class="page-title">
-  <img src="https://oranges.lt/mcwikimgs/image.png" alt="Orange MC" class="title-icon"> 
+  <img src="https://oranges.lt/img/logo.png" alt="Orange MC" class="title-icon"> 
   <h1>Orange MC</h1>
 </div>
 

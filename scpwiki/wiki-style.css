@@ -1,0 +1,712 @@
+/* General Body and Layout */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#sidebar {
+    width: 150px;
+    flex-shrink: 0; /* Prevent sidebar from shrinking */
+    padding: 20px;
+    padding-top: 70px; /* Space for mobile menu button */
+    border-right: 1px solid;
+    overflow-y: auto;
+}
+
+/* Search Bar */
+#search-container {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+#search-input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+body.light-theme #search-input {
+    background-color: #fff;
+    color: #000;
+    border-color: #ddd;
+}
+
+body.light-theme #search-input:focus {
+    outline: none;
+    border-color: #0366d6;
+}
+
+body.dark-theme #search-input {
+    background-color: #161b22;
+    color: #c9d1d9;
+    border-color: #30363d;
+}
+
+body.dark-theme #search-input:focus {
+    outline: none;
+    border-color: #58a6ff;
+}
+
+#search-input::placeholder {
+    opacity: 0.6;
+}
+
+/* Search Results */
+.search-results-container {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: 4px;
+    max-height: 400px;
+    overflow-y: auto;
+    font-size: 13px;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+body.light-theme .search-results-container {
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+body.dark-theme .search-results-container {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+}
+
+.search-results-header {
+    font-size: 12px;
+    padding: 8px 12px;
+    opacity: 0.7;
+    border-bottom: 1px solid;
+}
+
+body.light-theme .search-results-header {
+    border-color: #e1e4e8;
+}
+
+body.dark-theme .search-results-header {
+    border-color: #30363d;
+}
+
+.search-result-item {
+    padding: 10px 12px;
+    cursor: pointer;
+    border-left: 3px solid transparent;
+}
+
+.search-result-item:hover {
+    border-left-color: #0366d6;
+}
+
+body.light-theme .search-result-item:hover {
+    background-color: #f6f8fa;
+}
+
+body.dark-theme .search-result-item:hover {
+    background-color: #21262d;
+    border-left-color: #58a6ff;
+}
+
+.search-result-title {
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+body.light-theme .search-result-title {
+    color: #1a0dab;
+}
+
+body.dark-theme .search-result-title {
+    color: #8ab4f8;
+}
+
+.search-result-item:hover .search-result-title {
+    text-decoration: underline;
+}
+
+.search-result-snippet {
+    font-size: 12px;
+    opacity: 0.8;
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+.search-loading, .search-no-results {
+    padding: 12px;
+    opacity: 0.6;
+    font-size: 12px;
+    text-align: center;
+}
+
+#content {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* Light Theme */
+body.light-theme {
+    background-color: #fff;
+    color: #000;
+}
+
+body.light-theme #content {
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+    background-size: 16px 16px;
+}
+
+body.light-theme #sidebar {
+    background-color: #fff;
+    border-color: #ddd;
+}
+
+body.light-theme a {
+    color: #0366d6;
+}
+
+body.light-theme code {
+    background-color: #f6f8fa;
+}
+
+/* Dark Theme */
+body.dark-theme {
+    background-color: #0d1117;
+    color: #c9d1d9;
+}
+
+body.dark-theme #content {
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: 16px 16px;
+}
+
+body.dark-theme #sidebar {
+    background-color: #0d1117;
+    border-color: #21262d;
+}
+
+body.dark-theme a {
+    color: #58a6ff;
+}
+
+body.dark-theme code {
+    background-color: #161b22;
+}
+
+/* Sidebar Navigation */
+#nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+#nav ul li {
+    margin: 5px 0;
+}
+
+#nav ul li a {
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Content Area */
+#content h1, #content h3 {
+    border-bottom: 1px solid;
+    padding-bottom: 0.3em;
+}
+
+body.light-theme #content h1, body.light-theme #content h3 {
+    border-color: #eaecef;
+}
+
+body.dark-theme #content h1, body.dark-theme #content h3 {
+    border-color: #30363d;
+}
+
+code {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    padding: 0.2em 0.4em;
+    margin: 0;
+    font-size: 85%;
+    border-radius: 3px;
+}
+
+pre {
+    padding: 16px;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+    border-radius: 3px;
+}
+
+body.light-theme pre {
+    background-color: #f6f8fa;
+}
+
+body.dark-theme pre {
+    background-color: #161b22;
+}
+
+/* Theme Switcher */
+#theme-switcher {
+    position: fixed;
+    top: 15px;
+    left: 59px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+}
+
+body.light-theme #theme-switcher {
+    color: #000;
+}
+
+body.dark-theme #theme-switcher {
+    color: #c9d1d9;
+}
+
+#theme-switcher svg {
+    width: 28px;
+    height: 28px;
+    stroke: currentColor;
+}
+
+/* Image Styling */
+#content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-theme #content img {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Smaller inline images */
+#content p img {
+    max-width: 400px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 10px 15px 10px 0;
+}
+
+/* Ensure images in tables are also responsive */
+#content table img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Ensure all images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Page Title with Icon */
+.page-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 20px 0 30px 0;
+}
+
+.page-title h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 600;
+    border: none !important;
+    padding: 0 !important;
+}
+
+.page-title h2 {
+    margin: 0;
+    font-size: 2.0rem;
+    font-weight: 600;
+    border: none !important;
+    padding: 0 !important;
+}
+
+.title-icon {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    margin: 0 !important;
+    box-shadow: none !important;
+    display: inline-block !important;
+    border-radius: 0 !important;
+}
+
+/* Centered Content */
+.centered-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Link Buttons */
+.link-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 30px auto;
+    max-width: 800px;
+}
+
+.link-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+body.light-theme .link-button {
+    background-color: #f6f8fa;
+    color: #0366d6;
+    border: 1px solid #e1e4e8;
+}
+
+body.light-theme .link-button:hover {
+    background-color: #0366d6;
+    color: white;
+    border-color: #0366d6;
+}
+
+body.dark-theme .link-button {
+    background-color: #161b22;
+    color: #58a6ff;
+    border: 1px solid #30363d;
+}
+
+body.dark-theme .link-button:hover {
+    background-color: #1f6feb;
+    color: white;
+    border-color: #1f6feb;
+}
+
+.link-button svg {
+    flex-shrink: 0;
+}
+
+/* Wiki Content Sections */
+.wiki-content {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.wiki-content h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 30px 0 20px 0;
+}
+
+.indented-list {
+    list-style-type: disc;
+    padding-left: 5mm;
+    margin: 15px 0;
+}
+
+.indented-list li {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+/* Mobile Menu Toggle Button */
+#mobile-menu-toggle {
+    display: none; /* Hidden by default on desktop */
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1001;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+}
+
+body.light-theme #mobile-menu-toggle {
+    color: #000;
+}
+
+body.dark-theme #mobile-menu-toggle {
+    color: #c9d1d9;
+}
+
+#mobile-menu-toggle svg {
+    width: 28px;
+    height: 28px;
+    stroke: currentColor;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    /* Mobile menu toggle visible on mobile */
+    #mobile-menu-toggle {
+        display: block;
+    }
+
+    /* Sidebar hidden by default on mobile */
+    #sidebar {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        z-index: 1000;
+        transition: left 0.3s ease;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        padding-top: 70px;
+    }
+
+    #sidebar.active {
+        left: 0;
+    }
+
+    body.light-theme #sidebar {
+        background-color: #fff;
+    }
+
+    body.dark-theme #sidebar {
+        background-color: #0d1117;
+    }
+
+    /* Overlay when sidebar is open */
+    body::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0);
+        pointer-events: none;
+        transition: background-color 0.3s ease;
+        z-index: 999;
+        opacity: 0;
+    }
+
+    body.sidebar-open::after {
+        background-color: rgba(0, 0, 0, 0.5);
+        pointer-events: all;
+        opacity: 1;
+    }
+
+    /* Content takes full width on mobile */
+    #content {
+        width: 100%;
+        padding: 70px 15px 20px 15px;
+        margin: 0;
+    }
+
+    /* Theme switcher repositioned on mobile */
+    #theme-switcher {
+        top: 15px;
+        right: 15px;
+        z-index: 998;
+    }
+
+    /* Adjust page title on mobile */
+    .page-title {
+        flex-direction: column;
+        gap: 8px;
+        margin: 10px 0 20px 0;
+    }
+
+    .page-title h1 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .page-title h2 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .title-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    /* Link buttons stack on mobile */
+    .link-buttons {
+        flex-direction: column;
+        gap: 10px;
+        margin: 20px auto;
+    }
+
+    .link-button {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+
+    /* Wiki content adjustments */
+    .wiki-content {
+        padding: 0 10px;
+        margin: 20px auto;
+    }
+
+    .wiki-content h2 {
+        font-size: 1.5rem;
+        margin: 20px 0 15px 0;
+    }
+
+    /* Images responsive on mobile */
+    #content img {
+        max-width: 100%;
+        margin: 15px auto;
+    }
+
+    #content p img {
+        max-width: 100%;
+        margin: 10px 0;
+        display: block;
+    }
+
+    /* Code blocks scroll on mobile */
+    pre {
+        overflow-x: auto;
+        font-size: 80%;
+        padding: 12px;
+    }
+
+    code {
+        font-size: 80%;
+        word-break: break-word;
+    }
+
+    /* Search container adjustments */
+    #search-container {
+        margin-bottom: 15px;
+    }
+
+    /* Search results container */
+    .search-results-container {
+        max-height: 300px;
+        font-size: 12px;
+    }
+
+    /* Navigation links */
+    #nav ul li {
+        margin: 8px 0;
+    }
+
+    #nav ul li a {
+        display: block;
+        padding: 5px 0;
+        font-size: 15px;
+    }
+
+    /* Tables scroll on mobile */
+    #content table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    /* Headings adjusted for mobile */
+    #content h1 {
+        font-size: 1.8rem;
+    }
+
+    #content h2 {
+        font-size: 1.5rem;
+    }
+
+    #content h3 {
+        font-size: 1.2rem;
+    }
+
+    /* Paragraphs and text content */
+    #content p {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    /* Lists on mobile */
+    .indented-list {
+        padding-left: 20px;
+    }
+}
+
+/* Tablet responsive styles */
+@media (max-width: 1024px) and (min-width: 769px) {
+    #sidebar {
+        width: 180px;
+    }
+
+    #content {
+        padding: 20px 25px;
+    }
+
+    .page-title h1 {
+        font-size: 2.2rem;
+    }
+
+    .page-title h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+    #content {
+        padding: 60px 10px 15px 10px;
+    }
+
+    .page-title h1 {
+        font-size: 1.5rem;
+    }
+
+    .page-title h2 {
+        font-size: 1.3rem;
+    }
+
+    #mobile-menu-toggle {
+        top: 10px;
+        left: 10px;
+        width: 40px;
+        height: 40px;
+    }
+
+    #theme-switcher {
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .link-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}

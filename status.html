@@ -3,10 +3,952 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orange Servers</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="keywords" content="oranges.lt, Orange, Lithuanian, Status, status, avalibility, Lithuania, Minecraft Serveris, Apelsinai, Orangai, Apelsinų serveris, mc, scp, scpwiki, mcwiki, Orange MC, software, privacy, performance, linux, windows, apps, programs, orang, oranges, oran, orange, oranges, lt, oranges.com, oranges.net, mc.oranges.lt, play.oranges.lt, orng, orange programs">
+    <link rel="icon" type="image/png" href="./img/logo.png">
+    <link rel="icon" href="./img/logo.png" type="image/x-icon">
+    <title>Oranges</title>
+    <meta name="description" content="oranges.lt - We are developing software and services that simplify privacy and performance!">
+    <link rel="canonical" href="https://oranges.lt/">
+    <meta name="referrer" content="no-referrer-when-downgrade"> 
+    <meta property="og:site_name" content="Oranges">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Oranges">
+    <meta property="og:description" content="oranges.lt - We are developing software and services that simplify privacy and performance!">
+    <meta property="og:url" content="https://oranges.lt/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Oranges">    
+    <meta name="twitter:description" content="oranges.lt - We are developing software and services that simplify privacy and performance!">
+    <meta name="twitter:url" content="https://oranges.lt/">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="status.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script type="application/ld+json">
+    {
+     "@context": "https://schema.org",
+     "@type": "Organization",
+     "url": "https://oranges.lt",
+     "logo": "https://oranges.lt/img/logo.png"
+    }
+    </script>
+    <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #161616;
+  color: #ffffff;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.announcement-bar {
+  background: linear-gradient(90deg, #ff7a18 0%, #ffa931 50%, #ffd55b 100%);
+  color: #1a1a1a;
+  box-shadow: 0 10px 25px rgba(255, 153, 0, 0.25);
+  border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.announcement-hidden {
+  opacity: 0;
+  transform: translateY(-12px);
+  pointer-events: none;
+}
+
+.announcement-inner {
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.announcement-message {
+  flex: 1 1 auto;
+  font-size: 16px;
+  color: rgba(26, 26, 26, 0.92);
+  margin: 0;
+}
+
+.announcement-message .announcement-link {
+  margin-left: 19px;
+}
+
+.announcement-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 18px;
+  background: rgba(0, 0, 0, 0.18);
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 999px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.announcement-link:hover {
+  background: rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px);
+}
+
+.announcement-close {
+  background: rgba(0, 0, 0, 0.15);
+  border: none;
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 1;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.announcement-close:hover {
+  background: rgba(0, 0, 0, 0.3);
+  transform: rotate(90deg);
+}
+
+@media (max-width: 768px) {
+  .announcement-inner {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .announcement-message {
+    font-size: 15px;
+  }
+
+  .announcement-message .announcement-link {
+    margin-left: 0;
+  }
+
+  .announcement-close {
+    align-self: center;
+  }
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background-color: rgba(22, 22, 22, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #333;
+  z-index: 1000;
+}
+
+.header-content {
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.logo-container h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.site-title {
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-left: auto;
+}
+
+.nav-btn {
+  background: none;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.nav-btn.discord-btn {
+  color: #5865f2;
+}
+
+.nav-btn.discord-btn:hover {
+  color: #4752c4;
+  transform: translateY(-1px);
+}
+
+.nav-btn:hover {
+  color: rgba(255, 255, 255, 0.7);
+  transform: translateY(-1px);
+}
+
+.titlepagehero {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 20px;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.hero-logo {
+  height: 120px;
+  margin-bottom: 30px;
+}
+
+.titlepagehero h1 {
+  font-size: 68px;
+  margin-bottom: 20px;
+}
+
+.titlepagehero h2 {
+  font-size: 24px;
+  margin-bottom: 40px;
+  font-weight: normal;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 40px;
+}
+
+.button {
+  background: #ffffff;
+  color: #000000;
+  border: none;  
+  padding: 0;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border-radius: 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  display: flex; 
+  align-items: center;    
+  justify-content: center;
+  width: 165px;
+  height: 48px;
+  box-sizing: border-box;
+  min-width: 165px; 
+  max-width: 165px;
+  flex: 0 0 auto;
+  line-height: normal;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 0 40px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.centercontents {
+  text-align: center;
+}
+
+h1, h2, h3 {
+  color: rgb(252, 252, 252);
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+}
+
+h1 {
+  font-size: 48px;
+  text-transform: uppercase;
+}
+
+.cta-btn {
+  display: inline-block;
+  margin-top: 32px;
+  background: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 17px 45px;
+  font-size: 23px;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 0;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.cta-btn.discord-btn {
+  background: #5e5ce2 !important;
+  color: #000000 !important;
+  box-shadow: 0 0 15px rgba(92, 103, 226) !important;
+}
+
+.cta-btn.discord-btn:hover {
+  background: #ffffff;
+  box-shadow: 0 0 45px rgba(255, 255, 255, 1);
+}
+
+.cta-btn:hover {
+  background: #000000;
+  color: #232323;
+}
+
+body.minecraft-page .discord-btn,
+body.terms-page .discord-btn {
+  box-shadow: none !important;
+  background: #5865f2 !important;
+  color: #ffffff !important;
+}
+
+body.minecraft-page .discord-btn:hover,
+body.terms-page .discord-btn:hover {
+  box-shadow: none !important;
+  background: #4752c4 !important;
+  color: #ffffff !important;
+}
+
+.nbt {
+  display: inline-block;
+  margin-top: 40px;
+  background: #f3f3f3;
+  color: #000000;
+  border: none;
+  padding: 16px 42px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.nbt:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: 0.5s;
+}
+
+.nbt:hover {
+  background: #ffffff;
+  box-shadow: 0 0 45px rgba(255, 255, 255, 0.8);
+  transform: translateY(-2px);
+}
+
+.nbt:hover:before {
+  left: 100%;
+}
+
+@media (max-width: 1200px) {
+  .header-content {
+    padding: 12px 20px;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  nav {
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .nav-btn {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  .logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .site-title {
+    font-size: 18px;
+  }
+
+  .container {
+    margin: 30px auto;
+    padding: 20px;
+  }
+
+  .titlepagehero {
+    padding: 20px;
+    margin: 30px auto;
+  }
+
+  .titlepagehero h1 {
+    font-size: 36px;
+  }
+
+  .titlepagehero h2 {
+    font-size: 18px;
+  }
+
+  .hero-logo {
+    height: 80px;
+  }
+
+  .hero-buttons {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .button {
+    width: 165px !important;
+    height: 48px !important;
+    font-size: 18px !important;
+    margin: 10px 0 !important;
+    padding: 0 !important;
+    flex: 0 0 auto !important;
+    
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    min-width: 165px !important;
+    max-width: 165px !important;
+    line-height: normal !important;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-content {
+    padding: 0 10px;
+  }
+
+  .nav-btn {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .titlepagehero h1 {
+    font-size: 28px;
+  }
+
+  .titlepagehero h2 {
+    font-size: 16px;
+  }
+
+  .hero-logo {
+    height: 60px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+}
+
+.roadmap-image {
+  margin: 30px auto;
+  text-align: center;
+}
+
+.roadmap-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+@media screen and (max-width: 600px) {
+  .roadmap-image {
+    margin: 20px -20px;
+  }
+
+  .roadmap-img {
+    border-radius: 0;
+  }
+}
+
+.footercopyrighttext {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  margin: 40px 0 20px 0;
+}
+.status-legend {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.status-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    flex-shrink: 0;
+}
+.status-indicator.online {
+    background-color: #00ff00;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+.status-indicator.warning {
+    background-color: #ffaa00;
+    box-shadow: 0 0 10px rgba(255, 170, 0, 0.5);
+}
+.status-indicator.offline {
+    background-color: #ff0000;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+.status-indicator.checking {
+    background-color: #666666;
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
+    100% { opacity: 0.3; transform: scale(1); }
+}
+.status-grid {
+    display: grid;
+    gap: 40px;
+    margin: 50px 0;
+}
+.status-category {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+.status-category h2 {
+    color: #ffffff;
+    font-size: 24px;
+    margin-bottom: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 15px;
+}
+.status-item {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+.status-item:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+.status-item:last-child {
+    margin-bottom: 0;
+}
+.status-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.status-header h3 {
+    color: #ffffff;
+    font-size: 18px;
+    margin: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.server-address {
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    color: #cccccc;
+    margin: 0 0 10px 0;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 8px 12px;
+    border-radius: 4px;
+    display: inline-block;
+}
+.server-note {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 8px 0 0 0;
+    font-style: italic;
+    line-height: 1.4;
+}
+.service-status {
+    font-size: 13px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.status-grid-apps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+.app-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+.app-status:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+.app-name {
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.last-updated {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    margin: 30px 0 20px 0;
+}
+.api-info {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 30px 0 0 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.api-info p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 13px;
+    margin: 5px 0;
+    line-height: 1.4;
+}
+.api-info p strong {
+    color: #ffffff;
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    .status-legend {
+        gap: 15px;
+        margin: 20px 0;
+    }
+    .legend-item {
+        font-size: 12px;
+    }
+    .status-grid {
+        gap: 20px;
+        margin: 30px 0;
+    }
+    .status-category {
+        padding: 20px 15px;
+        margin: 0;
+        border-radius: 8px;
+    }
+    .status-category h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+    }
+    .status-item {
+        padding: 15px;
+        margin-bottom: 12px;
+    }
+    .status-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .status-header h3 {
+        font-size: 16px;
+    }
+    .server-address {
+        font-size: 13px;
+        padding: 6px 10px;
+        word-break: break-all;
+    }
+    .status-grid-apps {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    .app-status {
+        padding: 12px;
+    }
+    .api-info {
+        padding: 15px;
+        margin: 20px 0 0 0;
+    }
+    .api-info p {
+        font-size: 12px;
+    }
+}
+@media (max-width: 480px) {
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+    .logo-container {
+        justify-content: center;
+    }
+    .site-title {
+        font-size: 20px;
+    }
+    nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .nav-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+    .centercontents h1 {
+        font-size: 24px;
+        margin: 20px 0 10px 0;
+    }
+    .centercontents p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    .status-legend {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        margin: 15px 0;
+    }
+    .legend-item {
+        font-size: 11px;
+    }
+    .status-category {
+        margin: 0 -15px;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+        padding: 15px;
+    }
+    .status-category h2 {
+        font-size: 18px;
+    }
+    .status-header h3 {
+        font-size: 14px;
+        line-height: 1.3;
+    }
+    .server-address {
+        font-size: 11px;
+        padding: 5px 8px;
+        margin-bottom: 8px;
+    }
+    .status-indicator {
+        width: 14px;
+        height: 14px;
+        flex-shrink: 0;
+    }
+    .cta-btn {
+        width: 100%;
+        max-width: 300px;
+        padding: 12px;
+        font-size: 14px;
+        margin: 20px auto;
+        display: block;
+    }
+    .last-updated {
+        text-align: center;
+        font-size: 12px;
+        margin: 15px 0;
+    }
+    .api-info {
+        margin: 0 -15px;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+        padding: 12px 15px;
+    }
+    .api-info p strong {
+        font-size: 13px;
+    }
+    .manual-check-note {
+        font-size: 11px;
+        padding: 6px 10px;
+        margin-top: 8px;
+    }
+}
+@media (max-width: 320px) {
+    .site-title {
+        font-size: 18px;
+    }
+    .centercontents h1 {
+        font-size: 20px;
+    }
+    .nav-btn {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+    .status-header h3 {
+        font-size: 13px;
+    }
+    .server-address {
+        font-size: 10px;
+    }
+    .status-indicator {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+.status-loading {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: 2px solid #ffffff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.status-error {
+    background: rgba(255, 0, 0, 0.1);
+    border-color: rgba(255, 0, 0, 0.3);
+}
+.status-error .status-header h3 {
+    color: #ff6b6b;
+}
+.status-online {
+    background: rgba(0, 255, 0, 0.05);
+    border-color: rgba(0, 255, 0, 0.2);
+}
+.status-online .status-header h3 {
+    color: #51cf66;
+}
+.status-warning {
+    background: rgba(255, 170, 0, 0.05);
+    border-color: rgba(255, 170, 0, 0.2);
+}
+.status-warning .status-header h3 {
+    color: #ffa726;
+}
+.manual-check-note {
+    background: rgba(255, 165, 0, 0.1);
+    border: 1px solid rgba(255, 165, 0, 0.3);
+    border-radius: 4px;
+    padding: 8px 12px;
+    margin-top: 10px;
+    font-size: 12px;
+    line-height: 1.4;
+}
+.manual-check-note a {
+    color: #ffa500;
+    text-decoration: underline;
+    font-weight: bold;
+}
+.manual-check-note a:hover {
+    color: #ffcc66;
+}
+    </style>
 </head>
 <body>
     <header>
@@ -16,10 +958,13 @@
                 <h1 class="site-title">ORANGE STATUS</h1>
             </div>
             <nav>
-                <a href="index.html" class="nav-btn">HOME</a>
-                <a href="minecraft.html" class="nav-btn">MINECRAFT</a>
-                <a href="software.html" class="nav-btn">SOFTWARE</a>
-                <a href="https://discord.gg/cpkfnRuRv7" class="nav-btn discord-btn" target="_blank">DISCORD</a>
+                <a href="roadmap.html"><button class="nav-btn">Roadmap</button></a>
+                <a href="creators.html"><button class="nav-btn">Creators</button></a>
+                <a href="software.html"><button class="nav-btn">Software</button></a>
+                <a href="minecraft.html"><button class="nav-btn">Minecraft</button></a>
+                <a href="https://oranges.lt/scpwiki/index.html?page=main.md"><button class="nav-btn">SCP Wiki</button></a>
+                <a href="https://oranges.lt/mcwiki/index.html?page=main.md"><button class="nav-btn">MC Wiki</button></a>
+                <a href="https://discord.gg/cpkfnRuRv7" target="_blank"><button class="nav-btn discord-btn">Discord</button></a>
             </nav>
         </div>
     </header>
@@ -145,15 +1090,234 @@
                 <p><strong>About Status Checking:</strong></p>
                 <p>• Minecraft servers use multiple APIs (mcsrvstat.us, mcstatus.io, mcapi.us, minetools.eu) for maximum accuracy</p>
                 <p>• SCP:SL server status is checked via SCPList.kr API and web interface</p>
-                <p>• <strong>Manual check:</strong> You can always verify SCP:SL status directly at <a href="https://scplist.kr/servers/94815" target="_blank">SCPList Server Page</a></p>
+                <p>• Programs are not real time updated, because i do it</p>
+                <p><strong>Manual check:</strong> You can always verify SCP:SL status directly at <a href="https://scplist.kr/servers/94815" target="_blank">SCPList Server Page</a></p>
             </div>
         </div>
     </div>
 
     <div class="footercopyrighttext">
-        © 2025 Orange. Real-time server monitoring.
+        © 2026 Orange. Real-time server monitoring.
     </div>
 
-    <script src="status-checker.js"></script>
+    <script>
+class StatusChecker {
+    constructor() {
+        this.servers = {
+            scp: {
+                serverId: '94815',
+                type: 'scp'
+            },
+            mcJava: {
+                host: 'mc.oranges.lt',
+                port: 25565,
+                type: 'minecraft-java'
+            },
+            mcBedrock: {
+                host: 'play.oranges.lt',
+                port: 19132,
+                type: 'minecraft-bedrock'
+            }
+        };
+        this.lastUpdate = null;
+        this.checkInterval = 30000;
+        this.timeoutDuration = 5000;
+        this.init();
+    }
+    init() {
+        this.checkAllServers();
+        this.startAutoRefresh();
+        this.updateLastUpdatedTime();
+    }
+    async checkAllServers() {
+        const promises = [];
+        promises.push(this.checkSCPServer());
+        promises.push(this.checkMinecraftJava());
+        promises.push(this.checkMinecraftBedrock());
+        await Promise.all(promises);
+        this.lastUpdate = new Date();
+        this.updateLastUpdatedTime();
+    }
+    async checkSCPServer() {
+        const statusEl = document.getElementById('scp-status');
+        try {
+            statusEl.className = 'status-indicator checking';
+            const statusItem = statusEl.closest('.status-item');
+            const existingNote = statusItem?.querySelector('.manual-check-note');
+            if (existingNote) existingNote.remove();
+            const apis = this.getSCPApiEndpoints();
+            let data = null;
+            let lastError = null;
+            for (let i = 0; i < apis.length; i++) {
+                const apiUrl = apis[i];
+                try {
+                    const response = await this.fetchWithTimeout(apiUrl, 12000);
+                    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                    let responseData = await response.json();
+                    if (responseData.contents) responseData = JSON.parse(responseData.contents);
+                    data = responseData;
+                    break;
+                } catch (error) {
+                    lastError = error;
+                    continue;
+                }
+            }
+            if (!data) throw lastError || new Error('All SCPList API methods failed');
+            const isOnline = data.online === true;
+            statusEl.className = isOnline ? 'status-indicator online' : 'status-indicator offline';
+        } catch (error) {
+            console.error('SCP server check failed:', error);
+            statusEl.className = 'status-indicator warning';
+            statusEl.title = 'Unable to verify status - check manually';
+        }
+    }
+    getSCPApiEndpoints() {
+        const baseUrl = 'https://api.scplist.kr/api/servers/94815';
+        return [
+            'https://corsproxy.io/?' + encodeURIComponent(baseUrl),
+            'https://api.allorigins.win/get?url=' + encodeURIComponent(baseUrl),
+            baseUrl
+        ];
+    }
+    async checkMinecraftJava() {
+        const statusEl = document.getElementById('mc-java-status');
+        try {
+            statusEl.className = 'status-indicator checking';
+            const apis = [
+                'https://api.mcsrvstat.us/3/mc.oranges.lt',
+                'https://api.mcstatus.io/v2/status/java/mc.oranges.lt',
+                'https://mcapi.us/server/status?ip=mc.oranges.lt'
+            ];
+            let lastError = null;
+            for (const apiUrl of apis) {
+                try {
+                    const response = await this.fetchWithTimeout(apiUrl, 10000);
+                    if (!response.ok) continue;
+                    const data = await response.json();
+                    let isOnline = false;
+                    if (apiUrl.includes('mcsrvstat.us')) isOnline = data.online === true;
+                    else if (apiUrl.includes('mcstatus.io')) isOnline = data.online === true;
+                    else if (apiUrl.includes('mcapi.us')) isOnline = data.status === 'success' && data.online === true;
+                    statusEl.className = isOnline ? 'status-indicator online' : 'status-indicator offline';
+                    return;
+                } catch (error) {
+                    lastError = error;
+                    continue;
+                }
+            }
+            throw lastError || new Error('All APIs failed');
+        } catch (error) {
+            statusEl.className = 'status-indicator offline';
+            console.error('Minecraft Java check error:', error);
+        }
+    }
+    async checkMinecraftBedrock() {
+        const statusEl = document.getElementById('mc-bedrock-status');
+        try {
+            statusEl.className = 'status-indicator checking';
+            const apis = [
+                'https://api.mcsrvstat.us/bedrock/3/play.oranges.lt:19132',
+                'https://api.mcstatus.io/v2/status/bedrock/play.oranges.lt:19132',
+                'https://mcapi.us/server/status?ip=play.oranges.lt&port=19132'
+            ];
+            let lastError = null;
+            for (const apiUrl of apis) {
+                try {
+                    const response = await this.fetchWithTimeout(apiUrl, 10000);
+                    if (!response.ok) continue;
+                    const data = await response.json();
+                    let isOnline = false;
+                    if (apiUrl.includes('mcsrvstat.us')) isOnline = data.online === true;
+                    else if (apiUrl.includes('mcstatus.io')) isOnline = data.online === true;
+                    else if (apiUrl.includes('mcapi.us')) isOnline = data.status === 'success' && data.online === true;
+                    statusEl.className = isOnline ? 'status-indicator online' : 'status-indicator offline';
+                    return;
+                } catch (error) {
+                    lastError = error;
+                    continue;
+                }
+            }
+            throw lastError || new Error('All APIs failed');
+        } catch (error) {
+            statusEl.className = 'status-indicator offline';
+            console.error('Minecraft Bedrock check error:', error);
+        }
+    }
+    async fetchWithTimeout(url, timeout = 5000) {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), timeout);
+        try {
+            const response = await fetch(url, {
+                signal: controller.signal,
+                mode: 'cors',
+                cache: 'no-cache'
+            });
+            clearTimeout(timeoutId);
+            return response;
+        } catch (error) {
+            clearTimeout(timeoutId);
+            throw error;
+        }
+    }
+    startAutoRefresh() {
+        setInterval(() => this.checkAllServers(), this.checkInterval);
+    }
+    updateLastUpdatedTime() {
+        const lastUpdatedEl = document.getElementById('last-updated');
+        if (this.lastUpdate) {
+            lastUpdatedEl.textContent = this.lastUpdate.toLocaleTimeString();
+        } else {
+            lastUpdatedEl.textContent = 'Never';
+        }
+    }
+    async refreshStatus() {
+        const button = document.querySelector('.cta-btn');
+        const originalText = button.textContent;
+        button.textContent = 'Refreshing...';
+        button.disabled = true;
+        await this.checkAllServers();
+        button.textContent = originalText;
+        button.disabled = false;
+        button.style.transform = 'scale(1.05)';
+        setTimeout(() => { button.style.transform = ''; }, 200);
+    }
+}
+function refreshStatus() {
+    if (window.statusChecker) window.statusChecker.refreshStatus();
+}
+document.addEventListener('DOMContentLoaded', () => {
+    window.statusChecker = new StatusChecker();
+});
+window.addEventListener('error', (event) => {
+    console.error('Status page error:', event.error);
+});
+window.addEventListener('unhandledrejection', (event) => {
+    console.error('Unhandled promise rejection:', event.reason);
+});
+    </script>
+    <script>
+    ;(function() {
+    const path = window.location.pathname;
+    if (/^\/index(?:\.html)?$/.test(path)) {
+        history.replaceState(null, '', '/');
+    } else if (path.endsWith('.html')) {
+        history.replaceState(null, '', path.slice(0, -5));
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('a[href$=".html"]').forEach(link => {
+        link.addEventListener('click', event => {
+            event.preventDefault();
+            const href = link.getAttribute('href');
+            const cleanPath = href.replace(/\.html$/, '');
+            history.pushState(null, '', cleanPath);
+            window.location.href = cleanPath;
+        });
+        });
+    });
+    window.addEventListener('popstate', () => {
+        window.location.reload();
+    });
+    })();
+    </script>
 </body>
 </html>

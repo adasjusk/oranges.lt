@@ -5,7 +5,7 @@
 <p style="margin-bottom: 30px;">The world of Orange MC is a vast and unforgiving landscape that has been shaped by its players since the server's inception.</p>
 
 <div style="display: flex; justify-content: center; margin-bottom: 30px;">
-  <img src="https://oranges.lt/mcwikimgs/img11.png" alt="Server Screenshot" style="width: 100%; max-width: 700px; height: auto; border-radius: 8px;">
+  <img src="https://oranges.lt/img/mcwikimgs/img11.png" alt="Server Screenshot" style="width: 100%; max-width: 700px; height: auto; border-radius: 8px;">
 </div>
 
 <div style="display: flex; justify-content: center;">

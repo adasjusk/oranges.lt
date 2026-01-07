@@ -8,7 +8,7 @@
     <meta name="keywords" content="oranges.lt, Orange, Lithuanian, Lithuania, Minecraft Serveris, Apelsinai, Orangai, Apelsinų serveris, mc, scp, scpwiki, mcwiki, Orange MC, software, privacy, performance, linux, windows, apps, programs, orang, oranges, oran, orange, oranges, lt, oranges.com, oranges.net, mc.oranges.lt, play.oranges.lt, orng, orange programs">
     <link rel="icon" type="image/png" href="./img/logo.png">
     <link rel="icon" href="./img/logo.png" type="image/x-icon">
-    <title>Oranges</title>
+    <title>Oranges - The Software company</title>
     <meta name="description" content="oranges.lt - We are developing software and services that simplify privacy and performance!">
     <link rel="canonical" href="https://oranges.lt/">
     <meta name="referrer" content="no-referrer-when-downgrade"> 
@@ -32,15 +32,6 @@
     </script>
 </head>
 <body> 
-    <div class="announcement-bar" data-announcement-id="2025-orange-launch">
-        <div class="announcement-inner">
-            <p class="announcement-message">
-                Orange SCP Server and Orange MC Server are both working, join!!!!
-                <a href="minecraft.html" class="announcement-link">Jump in</a>
-            </p>
-            <button class="announcement-close" type="button" aria-label="Dismiss announcement">&times;</button>
-        </div>
-    </div>
     <header>
         <div class="header-content">
                 <div class="logo-container">
@@ -72,16 +63,39 @@
             </div>
         </div>
         <div class="container">
-            <h1>Mission:</h1>
+            <h2>Mission:</h2>
             <p>Our mission is to make life easier for normal users. We build high-quality programs and apps — developing for both Linux and Windows ports.</p>
         </div>
 
         <div class="container centercontents">
-            <h1>What We Do:</h1>
+            <h2>What We Do:</h2>
             <p>We are developing software and services that simplify privacy and performance, we will be best fruit that's developing the software :)</p>
             <p>We will make everythig much better with time.</p>
-            <p class="footercopyrighttext">© 2025 oranges.lt, We are not acossiated with orange.com or orange isp, we are open source and non profit company.</p>
+            <p class="footercopyrighttext">© 2026 oranges.lt, We are not acossiated with orange.com or orange isp, we are open source and non profit company.</p>
         </div>    </main>
-    <script src="script.js"></script>
+    <script>
+    ;(function() {
+    const path = window.location.pathname;
+    if (/^\/index(?:\.html)?$/.test(path)) {
+        history.replaceState(null, '', '/');
+    } else if (path.endsWith('.html')) {
+        history.replaceState(null, '', path.slice(0, -5));
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('a[href$=".html"]').forEach(link => {
+        link.addEventListener('click', event => {
+            event.preventDefault();
+            const href = link.getAttribute('href');
+            const cleanPath = href.replace(/\.html$/, '');
+            history.pushState(null, '', cleanPath);
+            window.location.href = cleanPath;
+        });
+        });
+    });
+    window.addEventListener('popstate', () => {
+        window.location.reload();
+    });
+    })();
+    </script>
 </body>
 </html>

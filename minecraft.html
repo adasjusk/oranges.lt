@@ -8,6 +8,7 @@
   <link rel="icon" href="./img/logo.png" type="image/png" />
   <title>Orange MC | Minecraft Anarchy Server</title>
   <meta name="description" content="Join Orange MC - a survival Minecraft server with no resets, PVP enabled, and a true free-for-all experience!" />
+  <meta name="keywords" content="oranges.lt, Orange, Lithuanian, Lithuania, Minecraft Serveris, Apelsinai, Orangai, Apelsinų serveris, mc, scp, scpwiki, mcwiki, Orange MC, software, privacy, performance, linux, windows, apps, programs, orang, oranges, oran, orange, oranges, lt, oranges.com, oranges.net, mc.oranges.lt, play.oranges.lt, orng, orange programs">
   <link rel="canonical" href="https://oranges.lt/minecraft" />
   <meta name="referrer" content="no-referrer-when-downgrade" />
   <meta property="og:site_name" content="Orange MC" />
@@ -19,40 +20,481 @@
   <meta name="twitter:title" content="Orange MC" />
   <meta name="twitter:description" content="Orange MC is a minecraft survival server with a world that never resets, with pvp enabled in a free for all environment." />
   <meta name="twitter:url" content="https://oranges.lt/minecraft" />
-  <link rel="stylesheet" href="mc-style.css" />
+  <style>
+body {
+    margin: 0;
+    padding: 0;    font-family: 'Arial', sans-serif;    color: #fff;    min-height: 100vh;
+    background-color: #292929e7;
+    position: relative;
+}
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.95;
+    pointer-events: none;
+}
+header {
+    text-align: center;
+    padding-top: 40px;
+}
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+.site-title {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 0;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 44px;
+}
+.nav-btn {
+    background: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 15px 33px;
+    font-size: 17px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 0;
+    outline: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.14);
+    transition: background 0.2s, box-shadow 0.2s;
+}
+.nav-btn:hover {
+    background: #ffffff;
+    color: #000000;
+}
+.discord-btn {
+    background: #5865f2 !important;
+}
+.discord-btn:hover {
+    background: #4752c4 !important;
+    color: #ffffff !important;
+}
+.mc-main {
+    max-width: 1200px;
+    margin: 48px auto 0 auto;
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    align-items: flex-start;
+}
+.mc-card {
+    flex: 1;
+    height: 100%;
+    background: rgba(36,36,36,0.98);
+    box-shadow: 0 2px 14px rgba(0,0,0,0.22);
+    padding: 36px 32px 32px 32px;
+    border-radius: 0;
+    min-width: 320px;
+    margin-bottom: 28px;
+}
+h1 {
+    color: orange;
+    font-size: 2.2em;
+    text-align: center;
+    font-weight: bold;
+}
+.mc-card h2 {
+    color: orange;
+    margin-bottom: 16px;
+    margin-top: 0;
+    font-size: 1.23em;
+}
+.mc-card ul {
+    margin-top: 10px;
+    margin-bottom: 8px;
+    padding-left: 22px;
+}
+.mc-card li {
+    margin-bottom: 8px;
+}
+.server-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.ip-block {
+    background: #232323;
+    margin: 16px 0;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid #444;
+    border-radius: 0;
+    font-size: 1.07em;
+}
+.ip-block strong {
+    color: orange;
+}
+.copy-btn {
+    background: orange;
+    color: #222;
+    border: none;
+    padding: 10px 24px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 0;
+    transition: background 0.18s;
+}
+.copy-btn:active {
+    background: #ffb84d;
+}
+.join-btn {
+    background: orange;
+    color: #222;
+    border: none;
+    padding: 16px 0;
+    margin-top: 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 0;
+    letter-spacing: 1px;
+    transition: background 0.2s;
+}
+.join-btn:hover { background: #ffb84d; }
+main h1:first-child {
+    display: none;
+}
+.content-container {
+    max-width: 850px;
+    margin: 48px auto 0 auto;
+    background: rgba(36,36,36,0.98);
+    box-shadow: 0 2px 14px rgba(0,0,0,0.22);
+    padding: 36px 32px;
+    border-radius: 0;
+}
+.terms-section {
+    color: #ffffff;
+    margin-top: 24px;
+}
+.terms-section h1 {
+    color: orange;
+    font-size: 2.2em;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 32px;
+}
+.terms-section h2 {
+    color: orange;
+}
+@media (max-width: 1200px) {
+    .mc-main {
+        padding: 0 20px;
+    }
+}
+@media (max-width: 900px) {
+    .mc-main {
+        flex-direction: column;
+        margin: 30px auto;
+    }
+    .mc-card {
+        min-width: auto;
+    }
+}
+@media (max-width: 768px) {
+    .header-content {
+        padding: 10px;
+    }
+    nav {
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    .nav-btn {
+        padding: 10px 16px;
+        font-size: 14px;
+        flex: 1;
+        min-width: 100px;
+    }
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+    .site-title {
+        font-size: 18px;
+    }
+    .mc-main {
+        padding: 0 15px;
+        margin: 20px auto;
+    }
+    .mc-card {
+        padding: 20px;
+    }
+    .ip-block {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    .copy-btn {
+        width: 100%;
+    }
+    .content-container {
+        margin: 20px 15px;
+        padding: 20px;
+    }
+    h1 {
+        font-size: 28px;
+    }
+    .terms-section h2 {
+        font-size: 20px;
+    }
+}
+@media (max-width: 480px) {
+    .nav-btn {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+    .mc-main {
+        padding: 0 10px;
+    }
+    .mc-card {
+        padding: 15px;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    .app-name {
+        font-size: 1.1em;
+    }
+}
+.terms-section h2 {
+    color: orange;
+    margin-bottom: 16px;
+    margin-top: 24px;
+    font-size: 1.23em;
+}
+.terms-section ul {
+    margin: 16px 0;
+    padding-left: 24px;
+    list-style-type: disc;
+}
+.terms-section li {
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+.terms-section p {
+    margin: 16px 0;
+    line-height: 1.4;
+}
+.footercopyrighttext {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    margin: 40px auto 20px auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+  </style>
   <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "VideoGameServer",
+    "name": "OrangeMC",
     "url": "https://oranges.lt",
-    "logo": "https://oranges.lt/img/logo.png"
+    "description": "OrangeMC - The BEST Minecraft anarchy server in minecraft!",
+    "game": "Minecraft",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "LT"
+    }
   }
   </script>
-
   <!-- RSS Loader -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       let rssItems = [];
       let currentIndex = 0;
   
-      async function loadRSS() {
-        try {
-          const response = await fetch('/rss.xml');
-          const text = await response.text();
-          const parser = new DOMParser();
-          const xml = parser.parseFromString(text, "application/xml");
-          const items = Array.from(xml.querySelectorAll("item")).reverse(); // Show oldest first
-          rssItems = items.map(item => ({
-            title: item.querySelector("title").textContent,
-            description: item.querySelector("description").textContent
-          }));
-          currentIndex = rssItems.length - 1; // Start at bottom (most recent after reverse)
-          displayUpdate(currentIndex);
-        } catch (e) {
-          document.getElementById("update-list").innerHTML = "<li>Failed to load updates.</li>";
-        }
-      }
+      const rssXml = `<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>orange mc</title>
+    <link>https://oranges.lt/minecraft.html</link>
+    <description>orange mc updates</description>
+    <language>en-us</language>
+    <item>
+      <title>Hotfix #9</title>
+      <description>
+         Updated to 1.21.11
+         Using More Storage for server
+         Better Loading
+         Server Security increased
+         Fixed and updated some plugins
+         Server Privacy Policy and Terms are avalible in our discord!
+      </description>
+      <pubDate>Wed, 07 Jan 2026 18:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>I'm Back Update #8</title>
+      <description>
+         Servers are back into operational mode ! 
+         I'm really sorry...
+      </description>
+      <pubDate>Thu, 27 Nov 2025 19:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>I'm Sorry Update #7</title>
+      <description>
+         I will have to apologize, i dind't secure server properly and it got hacked, so he deleted everything, so i had to recrate everything from scratch, im really sorry for that, i will try to make it better and more secure...
+         Added Autosort plugin
+         Fixed some exploits
+         Updated server
+         Added new security measures
+         Improved backup system (periodic backups to new nvme drive that will be secured from system)
+         Banned few countries/continents: Russia, China, Africa, Antarctica because of high hack attempts from there (mostly vpns)
+         Forked pv-reminder and improved it
+         Better TAB
+         Improved performance
+         Switched from Paper to Purpur
+         Fixed Issues with plugins
+         So after reset only spawn was present, so i left it in this server for nostalgia of old times :)
+         I'm planning of forking authme and Protoclib to make it better secured and more lightweight
+         I'm really sorry...
+      </description>
+      <pubDate>Mon, 3 Nov 2025 21:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Server Update #6</title>
+      <description>
+         Updated to 1.21.9 and 1.21.10
+         Stuck plugin 1.21.10
+         Updated all plugins
+         Rmotd created
+         Forked pv-reminder
+         KillC created
+         Anti-popup temporarily disabled
+         Fixed Anarchy Exploits
+         Better System Management
+      </description>
+      <pubDate>Sun, 12 Oct 2025 14:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Server Update #5</title>
+      <description>
+         Updated to 1.21.7 and 1.21.8
+         Stuck plugin 1.21.8
+         Updated all plugins
+         Added auto restart
+         Added DiscordSRV
+         Added Voice Chat
+         Renamed old website to new one
+         Anti-popup added
+         Fixed Anarchy Exploits
+         Better System Management
+      </description>
+      <pubDate>Sun, 20 Jul 2025 14:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Server Update #4</title>
+      <description>
+         Update to 1.21.7<br/>
+         Fix exploits<br/>
+         Add some plugins<br/>
+         Fix error with permissions<br/>
+         Increase size of homes<br/>
+         Fix Discord bot<br/>
+         Autorestart<br/>
+         New versions of plugins<br/>
+         Add RSS
+      </description>
+      <pubDate>Tue, 16 Jul 2025 14:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Server Update #3</title>
+      <description>
+         Disabled Antipopup (enabling soon!)<br/>
+         Removed death messages<br/>
+         Disabled image frames (enabling soon!)<br/>
+         Switched to 1.21.6<br/>
+         Added support for old versions<br/>
+         Server has more stability<br/>
+         Fixed tab plugin showing old server website
+      </description>
+      <pubDate>Tue, 09 Jul 2025 14:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Server Update #2</title>
+      <description>
+         Added Bedrock support<br/>
+         New operating system<br/>
+         New domain: mc.oranges.lt<br/>
+         Removed city<br/>
+         Native 1.21.5<br/>
+         Fixed commands<br/>
+         Better SSL for website<br/>
+         Fixed some dangerous exploits
+      </description>
+      <pubDate>Tue, 02 Jul 2025 14:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Server Update #1</title>
+      <description>
+         /kill added<br/>
+         Server optimized<br/>
+         /stuck added<br/>
+         Removed annoying "chat isn't secure" popup<br/>
+         Better commands<br/>
+         Permissions and roles fixed<br/>
+         Command permissions fixed<br/>
+         New home plugin<br/>
+         New highways in Nether<br/>
+         New currency: EUR<br/>
+         1 MIL border increasing soon!<br/>
+         /tp deleted<br/>
+         Custom death<br/>
+         Random spawn location
+      </description>
+      <pubDate>Tue, 25 Jun 2025 14:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>`;
+  
+      const parser = new DOMParser();
+      const xml = parser.parseFromString(rssXml, "application/xml");
+      const items = Array.from(xml.querySelectorAll("item")).reverse(); // Show oldest first
+      rssItems = items.map(item => ({
+        title: item.querySelector("title").textContent,
+        description: item.querySelector("description").textContent
+      }));
+      currentIndex = rssItems.length - 1; // Start at bottom (most recent after reverse)
+      displayUpdate(currentIndex);
   
       function decodeHTML(html) {
         const txt = document.createElement("textarea");
@@ -79,8 +521,6 @@
         currentIndex = (currentIndex + 1) % rssItems.length;
         displayUpdate(currentIndex);
       });
-  
-      loadRSS();
     });
   </script>
       <style type="text/css">body { cursor: url('data:image/x-icon;base64,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'), auto; }</style>
@@ -107,10 +547,17 @@
       background-color: #f0f0f0;
     }
   </style>
-
-  <!-- Background JS -->
-  <script src="./background.js"></script>
-
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const images = ['img1.png', 'img2.png', 'img3.png'];
+        const randomImage = images[Math.floor(Math.random() * images.length)];
+        const backgroundImage = `url('img/${randomImage}')`;
+        document.documentElement.style.setProperty('--bg-image', backgroundImage);
+        const bgElement = document.createElement('div');
+        bgElement.className = 'background-overlay';
+        document.body.insertBefore(bgElement, document.body.firstChild);
+    });
+  </script>
   <!-- IP Copy JS -->
   <script>
     function copyIP(id) {
@@ -131,11 +578,12 @@
         <span class="site-title">Oranges MC</span>
       </div>
       <nav>
-        <a href="index.html"><button class="nav-btn">Home</button></a>
-        <a href="terms.html"><button class="nav-btn">Terms</button></a>
-        <a href="status.html"><button class="nav-btn">Status</button></a>
-        <a href="https://oranges.lt/mcwiki/index.html?page=main.md"><button class="nav-btn">MC Wiki</button></a>
-        <a href="https://discord.gg/cpkfnRuRv7" target="_blank"><button class="nav-btn discord-btn">Discord</button></a>
+                <a href="creators.html"><button class="nav-btn">Creators</button></a>
+                <a href="software.html"><button class="nav-btn">Software</button></a>
+                <a href="status.html"><button class="nav-btn">Status</button></a>
+                <a href="terms.html"><button class="nav-btn">Terms</button></a>
+                <a href="https://oranges.lt/mcwiki/index.html?page=main.md"><button class="nav-btn">MC Wiki</button></a>
+                <a href="https://discord.gg/cpkfnRuRv7" target="_blank"><button class="nav-btn discord-btn">Discord</button></a>
       </nav>
     </div>
   </header>
@@ -162,7 +610,7 @@
       <div class="mc-card server-info">
         <h2>Server Information</h2>
         <div style="margin-bottom:26px;">
-          Server is 1.21.10 version and it's running papermc with good performance, Java only.
+          Server is 1.21.11 version and it's running papermc with good performance, Java only.
         </div>
 
         <div class="ip-block">
@@ -186,7 +634,30 @@
     </div>
   </main>
 
-  <p class="footercopyrighttext">© 2025 oranges.lt</p>
-  <script src="script.js"></script>
+  <p class="footercopyrighttext">© 2026 oranges.lt</p>
+    <script>
+    ;(function() {
+    const path = window.location.pathname;
+    if (/^\/index(?:\.html)?$/.test(path)) {
+        history.replaceState(null, '', '/');
+    } else if (path.endsWith('.html')) {
+        history.replaceState(null, '', path.slice(0, -5));
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('a[href$=".html"]').forEach(link => {
+        link.addEventListener('click', event => {
+            event.preventDefault();
+            const href = link.getAttribute('href');
+            const cleanPath = href.replace(/\.html$/, '');
+            history.pushState(null, '', cleanPath);
+            window.location.href = cleanPath;
+        });
+        });
+    });
+    window.addEventListener('popstate', () => {
+        window.location.reload();
+    });
+    })();
+    </script>
 </body>
 </html>

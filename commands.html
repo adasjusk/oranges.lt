@@ -29,10 +29,12 @@
             <span class="site-name">Orange MC</span>
         </div>
         <nav>
-            <a href="index.html"><button>Home</button></a>
-            <a href="https://discord.gg/cpkfnRuRv7" target="_blank"><button>Discord</button></a>
-            <a href="info.html"><button>Info</button></a>
-            <a href="updates.html"><button>Updates</button></a>
+                <a href="index.html"><button class="nav-btn">Home</button></a>
+                <a href="creators.html"><button class="nav-btn">Creators</button></a>
+                <a href="status.html"><button class="nav-btn">Status</button></a>
+                <a href="minecraft.html"><button class="nav-btn">Minecraft</button></a>
+                <a href="software.html"><button class="nav-btn">Software</button></a>
+                <a href="https://discord.gg/cpkfnRuRv7" target="_blank"><button class="nav-btn discord-btn">Discord</button></a>
         </nav>
     </header>
     <main> 
@@ -48,9 +50,32 @@
             <p>/unstuck -teleports you to free space</p>
         </div>
         <div class="bottom-right-text">
-            Orange MC © 2025
+            Orange MC © 2026
           </div>
     </main>
-    <script src="script.js"></script>
+    <script>
+    ;(function() {
+    const path = window.location.pathname;
+    if (/^\/index(?:\.html)?$/.test(path)) {
+        history.replaceState(null, '', '/');
+    } else if (path.endsWith('.html')) {
+        history.replaceState(null, '', path.slice(0, -5));
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('a[href$=".html"]').forEach(link => {
+        link.addEventListener('click', event => {
+            event.preventDefault();
+            const href = link.getAttribute('href');
+            const cleanPath = href.replace(/\.html$/, '');
+            history.pushState(null, '', cleanPath);
+            window.location.href = cleanPath;
+        });
+        });
+    });
+    window.addEventListener('popstate', () => {
+        window.location.reload();
+    });
+    })();
+    </script>
 </body>
 </html>
