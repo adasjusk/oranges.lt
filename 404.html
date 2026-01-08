@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>404 | Page Not Found</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: #0d1117;
+    color: #c9d1d9;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    overflow: hidden;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.box {
+    background: rgba(13,17,23,0.85);
+    padding: 48px 64px;
+    border-radius: 14px;
+    box-shadow: 0 0 0 1px rgba(240,246,252,0.1);
+}
+
+h1 {
+    font-size: 5.5rem;
+    margin: 0;
+    color: #58a6ff;
+}
+
+p {
+    margin: 12px 0 28px;
+    opacity: 0.85;
+}
+
+a {
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #0d1117;
+    background: #58a6ff;
+    font-weight: 600;
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+
+a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(88,166,255,0.35);
+}
+</style>
+</head>
+<body>
+
+<canvas id="matrix"></canvas>
+
+<div class="container">
+    <div class="box">
+        <h1>404</h1>
+        <p>command not found</p>
+        <a href="https://oranges.lt">cd /home</a>
+    </div>
+</div>
+
+<script>
+const canvas = document.getElementById("matrix")
+const ctx = canvas.getContext("2d")
+
+let width, height
+const resize = () => {
+    width = canvas.width = window.innerWidth
+    height = canvas.height = window.innerHeight
+}
+window.addEventListener("resize", resize)
+resize()
+
+const chars = "01"
+const fontSize = 16
+const columns = () => Math.floor(width / fontSize)
+let drops = []
+
+const resetDrops = () => {
+    drops = Array(columns()).fill(1)
+}
+resetDrops()
+
+const draw = () => {
+    ctx.fillStyle = "rgba(13,17,23,0.15)"
+    ctx.fillRect(0, 0, width, height)
+
+    ctx.fillStyle = "#58a6ff"
+    ctx.font = fontSize + "px monospace"
+
+    for (let i = 0; i < drops.length; i++) {
+        const text = chars[Math.floor(Math.random() * chars.length)]
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize)
+
+        if (drops[i] * fontSize > height && Math.random() > 0.975) {
+            drops[i] = 0
+        }
+        drops[i]++
+    }
+}
+
+setInterval(draw, 50)
+</script>
+
+</body>
+</html>
