@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>404 | Oranges.lt</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: #0d0d0d;
+    overflow: hidden;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+#matrix {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+.terminal {
+    position: relative;
+    margin: auto;
+    top: 8%;
+    width: 90%;
+    max-width: 720px;
+    background: #111;
+    border-radius: 12px;
+    box-shadow: 0 10px 34px rgba(0,0,0,0.85);
+    z-index: 1;
+}
+.titlebar {
+    height: 28px;
+    background: #222;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+.circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+.close { background: #ff5f56; }
+.min   { background: #ffbd2e; }
+.max   { background: #27c93f; }
+.screen {
+    color: #f8f8f2;
+    padding: 14px;
+    font-size: 15px;
+    line-height: 1.45;
+    background: #111;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+a.back {
+    color: #ff8c00;
+    text-decoration: none;
+    font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<canvas id="matrix"></canvas>
+
+<div class="terminal">
+    <div class="titlebar">
+        <div class="circle close"></div>
+        <div class="circle min"></div>
+        <div class="circle max"></div>
+    </div>
+    <div class="screen" id="screen"></div>
+</div>
+
+<script>
+const canvas = document.getElementById("matrix")
+const ctx = canvas.getContext("2d")
+let w, h
+const resize = () => {
+    w = canvas.width = window.innerWidth
+    h = canvas.height = window.innerHeight
+}
+window.addEventListener("resize", resize)
+resize()
+
+const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+const fontSize = 14
+let cols = Math.floor(w / fontSize)
+let drops = Array(cols).fill(1)
+
+function drawMatrix() {
+    ctx.fillStyle = "rgba(13,13,13,0.15)"
+    ctx.fillRect(0, 0, w, h)
+    ctx.fillStyle = "#ff8c00"
+    ctx.font = fontSize + "px monospace"
+    for (let i = 0; i < drops.length; i++) {
+        const text = chars.charAt(Math.floor(Math.random() * chars.length))
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize)
+        if (drops[i] * fontSize > h && Math.random() > 0.97) drops[i] = 0
+        drops[i]++
+    }
+}
+setInterval(drawMatrix, 80)
+const screen = document.getElementById("screen")
+const lines = [
+    "cd /oranges.lt/404",
+    "",
+    "Sorry, spelling mistake or resource not available.",
+    "",
+    "go back to ",
+    ""
+]
+let lineIndex = 0
+
+function typeLine() {
+    if (lineIndex >= lines.length) return
+    const line = lines[lineIndex]
+    let charIndex = 0
+    const typeChar = () => {
+        if (charIndex < line.length) {
+            screen.innerHTML += line[charIndex]
+            charIndex++
+            setTimeout(typeChar, 55)
+        } else {
+            if (lineIndex === 4) {
+                screen.innerHTML += '<a class="back" href="https://oranges.lt">oranges.lt</a>?<br>'
+            } else {
+                screen.innerHTML += "<br>"
+            }
+            lineIndex++
+            setTimeout(typeLine, 180)
+        }
+    }
+    typeChar()
+}
+
+typeLine()
+
+</script>
+
+</body>
+</html>
