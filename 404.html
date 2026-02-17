@@ -4,6 +4,14 @@
 <meta charset="UTF-8">
 <title>404 | Oranges.lt</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+(function() {
+    const path = window.location.pathname;
+    if (path !== '/' && !path.endsWith('.html') && !path.includes('.')) {
+        window.location.href = path + '.html';
+    }
+})();
+</script>
 <style>
 html, body {
     margin: 0;
@@ -68,9 +76,7 @@ a.back {
 </style>
 </head>
 <body>
-
 <canvas id="matrix"></canvas>
-
 <div class="terminal">
     <div class="titlebar">
         <div class="circle close"></div>
@@ -79,7 +85,6 @@ a.back {
     </div>
     <div class="screen" id="screen"></div>
 </div>
-
 <script>
 const canvas = document.getElementById("matrix")
 const ctx = canvas.getContext("2d")
@@ -90,12 +95,10 @@ const resize = () => {
 }
 window.addEventListener("resize", resize)
 resize()
-
 const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
 const fontSize = 14
 let cols = Math.floor(w / fontSize)
 let drops = Array(cols).fill(1)
-
 function drawMatrix() {
     ctx.fillStyle = "rgba(13,13,13,0.15)"
     ctx.fillRect(0, 0, w, h)
@@ -119,7 +122,6 @@ const lines = [
     ""
 ]
 let lineIndex = 0
-
 function typeLine() {
     if (lineIndex >= lines.length) return
     const line = lines[lineIndex]
@@ -141,10 +143,7 @@ function typeLine() {
     }
     typeChar()
 }
-
 typeLine()
-
 </script>
-
 </body>
 </html>

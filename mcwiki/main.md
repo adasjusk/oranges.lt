@@ -34,6 +34,7 @@
 <h2>Game Info</h2>
 
 So this will tell you about various in-game features of Orange MC, including about administration, world, history, plugins and more!
+Recently the bedrock support was removed because of mojang and microsoft dumb rules on anarchy servers. Sorry to bedrock players :(.
 
 <ul class="indented-list">
   <li><a href="https://oranges.lt/mcwiki/index.html?page=plugins.md">Plugins List</a> - Contains information on each of the plugins in Orange MC.</li>
